@@ -126,7 +126,7 @@ export default function AboutPage() {
         title="Want to understand the scope of our work?"
         description="Speak with our engineering team about your specific operational context."
         primaryCta={{ href: "/contact", label: "Get in touch" }}
-        secondaryCta={{ href: "/services", label: "Explore services" }}
+        secondaryCta={{ href: "/project", label: "View project capability" }}
       />
     </>
   );

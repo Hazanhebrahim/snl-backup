@@ -9,43 +9,55 @@ export const siteConfig = {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/solutions", label: "Solutions" },
-  { href: "/partners", label: "Partners" },
-  { href: "/projects", label: "Projects" },
+  { href: "/project", label: "Project" },
+  { href: "/media", label: "Media", children: [
+    { href: "/media/news", label: "News" },
+    { href: "/media/events", label: "Events" },
+    { href: "/media/articles", label: "Articles" },
+  ] },
+  { href: "/community-impact", label: "Community Impact" },
   { href: "/contact", label: "Contact" },
 ];
 
 export const footerLinks = [
-  ...navLinks,
-  { href: "/media", label: "Media" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/project", label: "Project" },
+  { href: "/media/news", label: "News" },
+  { href: "/media/events", label: "Events" },
+  { href: "/media/articles", label: "Articles" },
   { href: "/community-impact", label: "Community Impact" },
-  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const serviceCards = [
   {
     title: "Swagelok Fluid Systems",
+    image: "/images/service-swagelok-fluid-systems-generated.jpg",
     description:
       "Authorized supply and technical support for Swagelok tube fittings, valves, regulators, tubing, manifolds, and custom assemblies.",
   },
   {
     title: "IFS Enterprise Software",
+    image: "/images/software-operations-center.png",
     description:
       "Enterprise asset management, production data, hydrocarbon accounting, operational intelligence, and ERP services for energy operations.",
   },
   {
     title: "Monitoring Systems",
+    image: "/images/service-monitoring-systems-generated.jpg",
     description:
       "Field-ready monitoring and instrumentation solutions that improve visibility across upstream, midstream, and industrial sites.",
   },
   {
     title: "Field Engineering",
+    image: "/images/service-field-eng.png",
     description:
       "On-site engineering support for product selection, installation, commissioning, diagnostics, and system integrity.",
   },
   {
     title: "Training",
+    image: "/images/service-training-generated.jpg",
     description:
       "Hands-on technical training for operations and maintenance teams working with fluid systems and digital operations tools.",
   },

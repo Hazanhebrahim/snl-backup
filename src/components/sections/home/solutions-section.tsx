@@ -28,8 +28,8 @@ export function SolutionsSection() {
             </p>
           </div>
           <Button
-            href="/solutions"
-            label="Explore solutions"
+            href="/project"
+            label="View project fit"
             variant="ghost"
             size="sm"
             className="shrink-0"

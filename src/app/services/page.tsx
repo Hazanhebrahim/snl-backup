@@ -29,37 +29,27 @@ export default function ServicesPage() {
         title="Core service portfolio"
         description="Structured offerings built for field realities, production-critical timelines, and long-term asset performance.">
         <div className="grid gap-8 lg:grid-cols-2">
-          {serviceCards.map((item, index) => {
-            const images = [
-              "/images/fluid-systems-closeup.png",
-              "/images/software-operations-center.png",
-              "/images/systems.png",
-              "/images/hero-field-operations.png",
-              "/images/training.png"
-            ];
-            const imgPath = images[index % images.length];
-            return (
-              <article key={item.title} className="group relative overflow-hidden rounded-2xl border border-muted bg-white shadow-xl shadow-primary/5 transition-all hover:-translate-y-1 hover:border-primary/30">
-                <div className="aspect-video w-full overflow-hidden bg-muted">
-                  <Image
-                    src={imgPath}
-                    alt={item.title}
-                    width={1600}
-                    height={900}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-8">
-                  <h3 className="text-xl font-bold text-navy group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-7 text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
+          {serviceCards.map((item) => (
+            <article key={item.title} className="group relative overflow-hidden rounded-2xl border border-muted bg-white shadow-xl shadow-primary/5 transition-all hover:-translate-y-1 hover:border-primary/30">
+              <div className="aspect-video w-full overflow-hidden bg-muted">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={1600}
+                  height={900}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-navy group-hover:text-primary transition-colors">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-base leading-7 text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
       </Section>
 

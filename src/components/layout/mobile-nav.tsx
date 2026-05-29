@@ -19,7 +19,7 @@ export function MobileNav({ pathname }: MobileNavProps) {
         aria-label={isOpen ? "Close navigation" : "Open navigation"}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex h-9 w-9 items-center justify-center rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+        className="flex h-9 w-9 items-center justify-center rounded-md text-white hover:bg-white/10">
         {isOpen ? (
           <svg
             width="16"
@@ -55,21 +55,47 @@ export function MobileNav({ pathname }: MobileNavProps) {
         <div className="fixed inset-x-0 top-16 z-30 border-b border-slate-200 bg-white px-4 py-3 shadow-lg">
           <nav className="flex flex-col gap-0.5">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(`${link.href}/`));
+              const hasChildren = "children" in link && link.children;
 
               return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
-                    isActive
-                      ? "bg-slate-900 text-white"
-                      : "text-slate-700 hover:bg-slate-100 hover:text-slate-900",
-                  )}>
-                  {link.label}
-                </Link>
+                <div key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "block rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
+                      isActive
+                        ? "bg-slate-900 text-white"
+                        : "text-slate-700 hover:bg-slate-100 hover:text-slate-900",
+                    )}>
+                    {link.label}
+                  </Link>
+                  {hasChildren ? (
+                    <div className="ml-3 mt-1 border-l border-slate-200 pl-3">
+                      {link.children.map((child) => {
+                        const childActive = pathname === child.href;
+
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setIsOpen(false)}
+                            className={cn(
+                              "block rounded-md px-3 py-2 text-sm transition-colors",
+                              childActive
+                                ? "bg-primary text-white"
+                                : "text-slate-600 hover:bg-slate-100 hover:text-slate-900",
+                            )}>
+                            {child.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  ) : null}
+                </div>
               );
             })}
           </nav>

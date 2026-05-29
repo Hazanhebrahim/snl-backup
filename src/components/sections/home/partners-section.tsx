@@ -73,8 +73,8 @@ export function PartnersSection() {
 
         <FadeIn delay={0.18} className="mt-8 text-center">
           <Button
-            href="/partners"
-            label="About our partnerships"
+            href="/about"
+            label="About the company"
             variant="ghost"
           />
         </FadeIn>

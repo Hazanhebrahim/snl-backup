@@ -19,7 +19,7 @@ export default function HomePage() {
         title="Ready to improve reliability, visibility, or performance?"
         description="Talk to our team about your fluid system requirements, software priorities, or operational constraints. We'll help define a practical delivery path."
         primaryCta={{ href: "/contact", label: "Book a consultation" }}
-        secondaryCta={{ href: "/services", label: "View all services" }}
+        secondaryCta={{ href: "/project", label: "View project capability" }}
       />
     </>
   );

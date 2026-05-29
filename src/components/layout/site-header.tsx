@@ -30,17 +30,58 @@ export function SiteHeader({ pathname }: SiteHeaderProps) {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden items-center gap-2 md:flex lg:gap-4">
-          <div className="flex items-center gap-1 lg:gap-2">
+        <div className="hidden items-center gap-1 md:flex lg:gap-2">
+          <div className="flex items-center gap-1">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(`${link.href}/`));
+              const hasChildren = "children" in link && link.children;
 
-              return (
+              return hasChildren ? (
+                <div key={link.href} className="group relative">
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "relative flex items-center gap-1 rounded-full px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] transition-colors duration-200 lg:px-4 lg:text-[11px] lg:tracking-[0.16em]",
+                      isActive ? "text-white" : "text-slate-400 hover:text-white"
+                    )}>
+                    <span className="relative z-10">{link.label}</span>
+                    <span className="relative z-10 text-[10px]" aria-hidden>
+                      v
+                    </span>
+                    {isActive && (
+                      <motion.div
+                        layoutId="navbar-pill"
+                        className="absolute inset-0 z-0 rounded-full bg-primary"
+                        transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                      />
+                    )}
+                  </Link>
+                  <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-3 w-48 -translate-x-1/2 rounded-xl border border-white/10 bg-navy/95 p-2 opacity-0 shadow-2xl backdrop-blur-xl transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                    {link.children.map((child) => {
+                      const childActive = pathname === child.href;
+
+                      return (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className={cn(
+                            "block rounded-lg px-3 py-2 text-xs font-semibold text-slate-300 transition-colors hover:bg-white/10 hover:text-white",
+                            childActive && "bg-primary text-white"
+                          )}>
+                          {child.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              ) : (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "relative rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] transition-colors duration-200",
+                    "relative rounded-full px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] transition-colors duration-200 lg:px-4 lg:text-[11px] lg:tracking-[0.16em]",
                     isActive ? "text-white" : "text-slate-400 hover:text-white"
                   )}>
                   <span className="relative z-10">{link.label}</span>

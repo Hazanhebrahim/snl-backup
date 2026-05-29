@@ -83,8 +83,8 @@ export function HeroSection() {
               style={{ animationDelay: "0.26s" }}>
               <Button href="/contact" label="Book a consultation" size="lg" />
               <Button
-                href="/services"
-                label="Explore services"
+                href="/project"
+                label="View project capability"
                 variant="ghost"
                 size="lg"
                 className="text-white ring-slate-700 hover:bg-slate-800 hover:text-white focus-visible:ring-slate-500"

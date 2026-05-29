@@ -23,8 +23,8 @@ export function ServicesSection() {
             </p>
           </div>
           <Button
-            href="/services"
-            label="All services"
+            href="/project"
+            label="Project capability"
             variant="ghost"
             size="sm"
             className="shrink-0"
@@ -35,39 +35,29 @@ export function ServicesSection() {
         <FadeInStagger
           className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
           stagger={0.08}>
-          {serviceCards.map((item, i) => {
-            const images = [
-              "/images/service-op-intel.png",
-              "/images/software-operations-center.png",
-              "/images/service-facility.png",
-              "/images/fluid-systems-closeup.png",
-              "/images/service-training.png",
-            ];
-            const imgPath = images[i % images.length];
-            return (
-              <FadeInItem key={item.title}>
-                <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-muted bg-white shadow-lg shadow-primary/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
-                  <div className="aspect-4/3 w-full overflow-hidden bg-muted">
-                    <Image
-                      src={imgPath}
-                      alt={item.title}
-                      width={1200}
-                      height={900}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-7">
-                    <h3 className="text-lg font-bold text-navy group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </div>
-                </article>
-              </FadeInItem>
-            );
-          })}
+          {serviceCards.map((item) => (
+            <FadeInItem key={item.title}>
+              <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-muted bg-white shadow-lg shadow-primary/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
+                <div className="aspect-4/3 w-full overflow-hidden bg-muted">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={1200}
+                    height={900}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-7">
+                  <h3 className="text-lg font-bold text-navy group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              </article>
+            </FadeInItem>
+          ))}
         </FadeInStagger>
       </div>
     </section>

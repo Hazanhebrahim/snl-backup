@@ -92,7 +92,7 @@ export default function SolutionsPage() {
         title="Ready to map your operational challenges to outcomes?"
         description="Let us review your current environment and identify the highest-leverage improvements."
         primaryCta={{ href: "/contact", label: "Start the conversation" }}
-        secondaryCta={{ href: "/services", label: "View services" }}
+        secondaryCta={{ href: "/project", label: "View project capability" }}
       />
     </>
   );
