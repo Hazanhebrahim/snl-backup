@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Articles",
+export const metadata: Metadata = createMetadata({
+  title: "Articles | Fluid Systems, Monitoring & Digital Operations",
   description:
-    "Technical articles from SNL Technology on fluid systems, monitoring, reliability, and operational software.",
-};
+    "Read SNL Technology technical articles on fluid system reliability, operational visibility, monitoring, maintenance, enterprise asset management, and digital operations.",
+  path: "/media/articles",
+});
 
 const articleTopics = [
   {

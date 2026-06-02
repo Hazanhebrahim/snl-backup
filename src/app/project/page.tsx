@@ -3,12 +3,14 @@ import Image from "next/image";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
 import { CtaBand } from "@/components/sections/cta-band";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Project",
+export const metadata: Metadata = createMetadata({
+  title: "Projects | Energy Sector Fluid System Delivery in Nigeria",
   description:
-    "SNL Technology project capability across fluid systems, monitoring systems, enterprise software, and field engineering.",
-};
+    "Explore SNL Technology project experience across Kaduna Refinery, ANOH, Chevron EGTL, WRPC, OFON Phase 2, fluid systems, monitoring systems, and IFS software delivery.",
+  path: "/project",
+});
 
 const projectTracks = [
   {

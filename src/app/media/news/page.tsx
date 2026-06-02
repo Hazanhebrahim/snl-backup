@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "News",
+export const metadata: Metadata = createMetadata({
+  title: "News | SNL Technology, IFS Partnership & Energy Updates",
   description:
-    "Company news, announcements, and partner updates from SNL Technology.",
-};
+    "Read SNL Technology news, external media coverage, partner updates, and announcements about IFS digital operations, energy-sector transformation, and company milestones.",
+  path: "/media/news",
+});
 
 const newsItems = [
   {

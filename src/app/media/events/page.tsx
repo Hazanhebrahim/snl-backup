@@ -4,12 +4,14 @@ import Link from "next/link";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
 import { CtaBand } from "@/components/sections/cta-band";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Events",
+export const metadata: Metadata = createMetadata({
+  title: "Events | SNL Technology Workshops & Industry Engagements",
   description:
-    "SNL Technology events, technical workshops, training sessions, and industry engagements.",
-};
+    "See SNL Technology events, technical workshops, Swagelok-focused sessions, IFS briefings, leadership updates, people stories, and energy industry engagements.",
+  path: "/media/events",
+});
 
 const eventTracks = [
   "Swagelok-focused installation and safety sessions",

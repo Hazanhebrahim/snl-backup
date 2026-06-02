@@ -5,12 +5,14 @@ import { Section } from "@/components/ui/section";
 import { CtaBand } from "@/components/sections/cta-band";
 import { LeadershipSection } from "@/components/sections/about/leadership-section";
 import { differentiators, leadership, values } from "@/content/site";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata: Metadata = createMetadata({
+  title: "About SNL Technology | Swagelok Reseller & IFS Partner in Nigeria",
   description:
-    "SNL Technology — 20+ years delivering fluid systems, monitoring systems, and enterprise software services for upstream and industrial operations in Nigeria.",
-};
+    "Learn about SNL Technology, a Lagos-based technical and operational performance partner delivering Swagelok fluid systems, monitoring systems, and IFS software services since 2005.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

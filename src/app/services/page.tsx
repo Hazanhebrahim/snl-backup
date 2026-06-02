@@ -8,12 +8,14 @@ import {
   serviceCards,
   softwareServices,
 } from "@/content/site";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Services",
+export const metadata: Metadata = createMetadata({
+  title: "Services | Swagelok Fluid Systems, Monitoring & IFS Software",
   description:
-    "SNL Technology service portfolio: Swagelok fluid systems, IFS enterprise software, monitoring systems, field engineering, and training.",
-};
+    "SNL Technology provides Swagelok tube fittings, valves, regulators, tubing, manifolds, custom assemblies, monitoring systems, field engineering, training, and IFS software services.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

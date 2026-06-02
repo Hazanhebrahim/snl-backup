@@ -9,12 +9,14 @@ import {
   softwareServices,
   solutionCards,
 } from "@/content/site";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Solutions",
+export const metadata: Metadata = createMetadata({
+  title: "Solutions | Upstream, Midstream, EPC & Industrial Operations",
   description:
-    "Outcome-driven solution pathways for upstream, midstream, EPC, and industrial operations.",
-};
+    "SNL Technology supports upstream exploration and production, midstream infrastructure, EPC, and industrial projects with fluid systems, monitoring, and software services.",
+  path: "/solutions",
+});
 
 export default function SolutionsPage() {
   return (

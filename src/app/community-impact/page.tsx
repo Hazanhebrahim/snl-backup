@@ -4,12 +4,14 @@ import Link from "next/link";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
 import { CtaBand } from "@/components/sections/cta-band";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Community Impact",
+export const metadata: Metadata = createMetadata({
+  title: "Community Impact | Innovate Sponsorship & Local Capability",
   description:
-    "SNL Technology community impact, capability development, local content, and social responsibility initiatives.",
-};
+    "SNL Technology supports Innovate, a non-profit initiative empowering entrepreneurs and career professionals with skills, networks, and business development opportunities.",
+  path: "/community-impact",
+});
 
 const impactAreas = [
   {

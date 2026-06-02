@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Blog",
+export const metadata: Metadata = createMetadata({
+  title: "Blog | Fluid Systems, Reliability & Energy Software Insights",
   description:
-    "Technical insights from SNL Technology on fluid systems, operational intelligence, and enterprise software for energy operations.",
-};
+    "Read SNL Technology insights on fluid system reliability, asset maintenance, production data management, operational intelligence, hydrocarbon accounting, and local capability building.",
+  path: "/blog",
+});
 
 const topics = [
   "Fluid system reliability",

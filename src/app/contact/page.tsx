@@ -3,12 +3,14 @@ import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
 import { siteConfig } from "@/content/site";
 import { ContactForm } from "./contact-form";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = createMetadata({
+  title: "Contact SNL Technology | Fluid Systems & Software Services",
   description:
-    "Get in touch with SNL Technology. Book a technical consultation or ask about our services.",
-};
+    "Contact SNL Technology to discuss Swagelok fluid system requirements, monitoring systems, IFS software services, training, field engineering, and project support in Nigeria.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

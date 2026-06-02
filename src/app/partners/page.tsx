@@ -4,12 +4,14 @@ import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
 import { CtaBand } from "@/components/sections/cta-band";
 import { fluidSystemProducts, softwareServices } from "@/content/site";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Partners",
+export const metadata: Metadata = createMetadata({
+  title: "Partners | Swagelok Sub-Saharan Africa & IFS Nigeria",
   description:
-    "SNL Technology is an authorized reseller of Swagelok products for Swagelok Sub-Saharan Africa and partner of IFS in Nigeria.",
-};
+    "SNL Technology is the authorised reseller of Swagelok products for Swagelok Sub-Saharan Africa and partner of IFS in Nigeria, supporting fluid systems and enterprise software services.",
+  path: "/partners",
+});
 
 export default function PartnersPage() {
   return (

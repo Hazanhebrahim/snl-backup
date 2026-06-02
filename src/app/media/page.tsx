@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Media",
+export const metadata: Metadata = createMetadata({
+  title: "Media | SNL Technology News, Events & Articles",
   description:
-    "News, events, and articles from SNL Technology across fluid systems, monitoring, enterprise software, and community impact.",
-};
+    "Explore SNL Technology media updates, news coverage, events, LinkedIn updates, and technical articles on fluid systems, monitoring, enterprise software, and community impact.",
+  path: "/media",
+});
 
 const mediaChannels = [
   {
