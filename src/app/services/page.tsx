@@ -17,6 +17,33 @@ export const metadata: Metadata = createMetadata({
   path: "/services",
 });
 
+const specialtyFluidServices = [
+  {
+    title: "Grab Sampling Systems",
+    image: "/images/service-swagelok-fluid-systems-generated.jpg",
+    description:
+      "Safely capture representative liquid or gas samples from process lines for reliable analysis and quality checks.",
+  },
+  {
+    title: "Gas Distribution Systems",
+    image: "/images/fluid-systems-closeup.png",
+    description:
+      "Easy-to-configure gas delivery systems with custom and optimized panel design for controlled distribution.",
+  },
+  {
+    title: "Mechanical Seal Support Systems",
+    image: "/images/service-monitoring-systems-generated.jpg",
+    description:
+      "Mechanical seal support systems that help keep rotating equipment online, increase operating efficiency, minimize downtime, reduce cost, and save time.",
+  },
+  {
+    title: "Fluid System Sample Evaluation",
+    image: "/images/fluid-systems-closeup.png",
+    description:
+      "Assessment of fluid system sample performance, functionality, and characteristics to identify issues, improvements, and specification requirements.",
+  },
+];
+
 export default function ServicesPage() {
   return (
     <>
@@ -47,6 +74,37 @@ export default function ServicesPage() {
                   {item.title}
                 </h3>
                 <p className="mt-3 text-base leading-7 text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Swagelok"
+        title="Specialty fluid system services"
+        description="Focused services for sampling, gas delivery, seal support, and system evaluation needs.">
+        <div className="grid gap-8 lg:grid-cols-2">
+          {specialtyFluidServices.map((item) => (
+            <article
+              key={item.title}
+              className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg shadow-primary/5 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+              <div className="aspect-video bg-muted sm:aspect-auto">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={900}
+                  height={600}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="p-7">
+                <h3 className="text-2xl font-bold leading-tight text-navy">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-muted-foreground">
                   {item.description}
                 </p>
               </div>
