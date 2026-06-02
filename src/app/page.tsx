@@ -4,6 +4,7 @@ import { ServicesSection } from "@/components/sections/home/services-section";
 import { SolutionsSection } from "@/components/sections/home/solutions-section";
 import { TrustSection } from "@/components/sections/home/trust-section";
 import { PartnersSection } from "@/components/sections/home/partners-section";
+import { ClientsLogoSection } from "@/components/sections/home/clients-logo-section";
 import { CtaBand } from "@/components/sections/cta-band";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <SolutionsSection />
       <TrustSection />
       <PartnersSection />
+      <ClientsLogoSection />
       <CtaBand
         title="Ready to improve reliability, visibility, or performance?"
         description="Talk to our team about your fluid system requirements, software priorities, or operational constraints. We'll help define a practical delivery path."

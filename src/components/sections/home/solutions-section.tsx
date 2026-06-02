@@ -20,11 +20,12 @@ export function SolutionsSection() {
               Solutions
             </p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
-              Applications across critical operations
+              Applications
             </h2>
             <p className="mt-3 max-w-xl text-lg leading-7 text-muted-foreground">
-              The work spans the environments where system reliability,
-              production visibility, and disciplined execution matter most.
+              SNL Technology supports upstream, midstream, EPC, and industrial
+              environments where system reliability, production visibility, and
+              disciplined execution matter most.
             </p>
           </div>
           <Button

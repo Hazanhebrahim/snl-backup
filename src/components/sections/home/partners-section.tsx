@@ -1,23 +1,6 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
-
-const partnerCapabilities = [
-  {
-    label: "Swagelok",
-    detail:
-      "Authorized product resale and technical support for fluid system components, assemblies, and training.",
-  },
-  {
-    label: "IFS",
-    detail:
-      "Enterprise software services for asset management, production data, operational intelligence, and ERP.",
-  },
-  {
-    label: "SNL delivery",
-    detail:
-      "Local engineering, implementation, procurement, and long-term support for Nigerian operations.",
-  },
-];
 
 export function PartnersSection() {
   return (
@@ -38,35 +21,56 @@ export function PartnersSection() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.1} className="mx-auto mt-12 max-w-2xl">
-          <div className="overflow-hidden rounded-2xl border border-muted bg-white shadow-xl shadow-primary/5">
-            <div className="flex items-center gap-5 border-b border-muted bg-primary/5 px-7 py-5">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-white">
-                <span className="text-xs font-black tracking-widest text-primary">
-                  SNL
-                </span>
+        <FadeIn delay={0.1} className="mx-auto mt-12 max-w-4xl">
+          <div className="overflow-hidden rounded-xl border border-muted bg-white shadow-xl shadow-primary/5">
+            <div className="border-b border-muted bg-primary/5 px-6 py-6 text-center sm:px-8">
+              <p className="text-base font-bold text-navy">Swagelok + IFS</p>
+              <p className="mt-1 text-xs font-medium text-accent">
+                Fluid systems and enterprise software partnerships
+              </p>
+            </div>
+
+            <div className="grid gap-0 sm:grid-cols-2">
+              <div className="flex min-h-40 items-center justify-center border-b border-muted bg-white px-8 py-10 sm:border-b-0 sm:border-r">
+                <Image
+                  src="/images/swagelok.jpg"
+                  alt="Swagelok logo"
+                  width={300}
+                  height={140}
+                  className="max-h-20 w-auto max-w-full object-contain"
+                />
               </div>
-              <div>
-                <p className="text-base font-bold text-navy">
-                  Swagelok + IFS
-                </p>
-                <p className="text-xs font-medium text-accent">
-                  Fluid systems and enterprise software partnerships
-                </p>
+              <div className="flex min-h-40 items-center justify-center bg-white px-8 py-10">
+                <Image
+                  src="/images/IFS.png"
+                  alt="IFS logo"
+                  width={300}
+                  height={140}
+                  className="max-h-20 w-auto max-w-full object-contain"
+                />
               </div>
             </div>
 
-            <div className="grid divide-y divide-slate-100 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-              {partnerCapabilities.map((cap) => (
-                <div key={cap.label} className="px-6 py-5">
-                  <p className="text-xs font-semibold text-slate-900">
-                    {cap.label}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">
-                    {cap.detail}
-                  </p>
-                </div>
-              ))}
+            <div className="grid gap-5 border-t border-muted px-6 py-6 sm:grid-cols-2 sm:px-8">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+                  Authorised reseller
+                </p>
+                <p className="mt-2 text-sm leading-7 text-slate-600">
+                  SNL Technology is the authorised reseller of Swagelok
+                  products for Swagelok Sub-Saharan Africa.
+                </p>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+                  Nigeria partner
+                </p>
+                <p className="mt-2 text-sm leading-7 text-slate-600">
+                  SNL Technology is the partner of IFS in Nigeria, supporting
+                  enterprise software services for upstream and industrial
+                  operators.
+                </p>
+              </div>
             </div>
           </div>
         </FadeIn>

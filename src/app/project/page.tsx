@@ -40,6 +40,45 @@ const proofPoints = [
   "Local engineering and delivery presence",
 ];
 
+const deliveredProjects = [
+  {
+    title: "Kaduna Refinery Rehabilitation Project",
+    year: "2024",
+    description:
+      "Delivered high-performance fluid system components for the rehabilitation of the Kaduna Refining and Petrochemical Company, supporting the integrity and reliability of critical process systems.",
+  },
+  {
+    title: "Assa North-Ohaji South (ANOH) SPDC Project",
+    year: "2024",
+    description:
+      "Supported the ANOH development project by supplying high-quality tubing and fittings that contributed to the integrity, reliability, and performance of critical fluid control systems for the Shell Petroleum Development Company.",
+  },
+  {
+    title: "ANOH Gas Transportation Pipeline Project",
+    year: "2023",
+    description:
+      "Supplied precision-engineered ball valves for the ANOH Gas Transportation Pipeline project executed by Oilserv Limited, supporting safe and reliable flow control across critical gas infrastructure.",
+  },
+  {
+    title: "Chevron Escravos Gas-to-Liquids (EGTL) Project",
+    year: "2022",
+    description:
+      "Delivered tubing, fittings, and valves for Chevron Corporation's EGTL project, supporting efficient and dependable fluid system performance.",
+  },
+  {
+    title: "WRPC Facility Upgrade Project",
+    year: "2020",
+    description:
+      "Supplied ball valves for the facility upgrade project executed by Reliant Overseas Limited at the Warri Refining and Petrochemical Company, contributing to improved operational efficiency and reliability.",
+  },
+  {
+    title: "Nigerdock OFON Phase 2 Project",
+    year: "2014",
+    description:
+      "Provided manifolds, tubing, fittings, valves, and gauges for instrumentation and fluid control applications on the OFON Phase 2 project, supporting safe, reliable, and efficient operations.",
+  },
+];
+
 export default function ProjectsPage() {
   return (
     <>
@@ -49,6 +88,52 @@ export default function ProjectsPage() {
         description="SNL Technology supports project teams with practical engineering capability across fluid systems, monitoring, enterprise software, and field execution."
         primaryCta={{ href: "/contact", label: "Discuss a project" }}
       />
+
+      <Section
+        eyebrow="Projects"
+        title="Delivering performance across Nigeria's energy sector"
+        description="For over two decades, SNL Technology has supported major energy projects with world-class fluid system solutions and enterprise software capabilities that enhance safety, reliability, and operational performance.">
+        <div className="grid gap-5 md:grid-cols-2">
+          {deliveredProjects.map((project) => (
+            <article
+              key={project.title}
+              className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="flex items-start justify-between gap-4">
+                <h2 className="text-lg font-bold text-navy">
+                  {project.title}
+                </h2>
+                <span className="shrink-0 rounded-md bg-primary/10 px-3 py-1 text-sm font-bold text-primary">
+                  {project.year}
+                </span>
+              </div>
+              <p className="mt-4 text-sm leading-7 text-slate-600">
+                {project.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Technology & software solutions"
+        title="Enterprise software for operational visibility"
+        description="As the local partner of IFS in Nigeria, SNL Technology delivers enterprise software solutions that help upstream energy operators optimize production, improve asset performance, strengthen operational visibility, and make faster, data-driven decisions across their operations.">
+        <div className="grid gap-5 md:grid-cols-3">
+          {[
+            "Production optimization",
+            "Asset performance",
+            "Operational intelligence",
+          ].map((item) => (
+            <div
+              key={item}
+              className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+              <p className="text-sm font-semibold leading-7 text-slate-800">
+                {item}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
 
       <Section
         title="How project work is organized"

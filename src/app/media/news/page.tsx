@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
 
@@ -27,6 +28,33 @@ const newsItems = [
   },
 ];
 
+const externalNews = [
+  {
+    title:
+      "SNL Technology Services CEO, Ladi Soyombo, Shares Insights on SNL and IFS Partnership",
+    source: "THISDAYLIVE",
+    href: "https://www.thisdaylive.com/2023/05/27/snl-technology-services-ceo-ladi-soyombo-shares-insights-on-snl-and-ifs-partnership/",
+  },
+  {
+    title:
+      "Digitizing Nigeria's Oil and Gas Sector: SNL Technology Services and IFS Partner to Transform Upstream Operations Through Digital Technology",
+    source: "Nairametrics",
+    href: "https://nairametrics.com/2023/05/27/digitizing-nigerias-oil-and-gas-sector-snl-technology-services-and-ifs-partner-to-transform-upstream-operations-through-digital-technology/",
+  },
+  {
+    title:
+      "SNL Technology partners with IFS to revolutionise Nigeria's energy landscape",
+    source: "APIE Project",
+    href: "https://appsaf.apieproject.com/news/2023/05/29/snl-technology-partners-with-ifs-to-revolutionise-nigerias-energy-landscape-an-exclusive-interview-with-snl-techs-ceo-ladi-soyombo/",
+  },
+  {
+    title:
+      "SNL Technology partners with IFS to revolutionise Nigeria's energy landscape - An exclusive interview with SNL Tech's CEO, Ladi Soyombo",
+    source: "Business Insider Africa",
+    href: "https://africa.businessinsider.com/local/markets/an-exclusive-interview-with-snl-techs-ceo-ladi-soyombo/7cgxxp3",
+  },
+];
+
 export default function NewsPage() {
   return (
     <>
@@ -35,6 +63,32 @@ export default function NewsPage() {
         title="News that keeps customers and partners current"
         description="A clean newsroom for approved announcements, partner updates, and operational milestones from SNL Technology."
       />
+
+      <Section
+        eyebrow="News"
+        title="SNL Technology in the media"
+        description="External coverage and partner stories about SNL Technology's work in software, digital operations, and energy-sector transformation.">
+        <div className="grid gap-5 md:grid-cols-2">
+          {externalNews.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+                {item.source}
+              </p>
+              <h2 className="mt-3 text-lg font-bold leading-7 text-navy group-hover:text-primary">
+                {item.title}
+              </h2>
+              <p className="mt-5 text-sm font-semibold text-primary">
+                Read story
+              </p>
+            </Link>
+          ))}
+        </div>
+      </Section>
 
       <Section
         title="Newsroom structure"

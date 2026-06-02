@@ -67,24 +67,24 @@ export const solutionCards = [
   {
     title: "Upstream Exploration & Production",
     description:
-      "Instrumentation, monitoring, fluid systems, and software services for production sites and asset teams.",
+      "Instrumentation, monitoring, and fluid systems and software services for upstream sites.",
   },
   {
     title: "Midstream Infrastructure",
     description:
-      "Pipeline instrumentation, fluid transfer systems, maintenance visibility, and software services for infrastructure operations.",
+      "Pipeline instrumentation, fluid transfer systems, and software services.",
   },
   {
     title: "EPC & Industrial Projects",
     description:
-      "Engineering support, monitoring systems, and standards-aligned fluid systems for oil, gas, and industrial projects.",
+      "Engineering support, monitoring systems, and fluid systems for oil, gas and industrial projects.",
   },
 ];
 
 export const trustStats = [
   { label: "Established", value: "2005" },
   { label: "Years in upstream & industrial sectors", value: "20+" },
-  { label: "Delivery model", value: "Fluid systems + software" },
+  { label: "Products & Services", value: "Fluid Systems & Software" },
 ];
 
 export const challenges = [
@@ -128,7 +128,7 @@ export const fluidSystemProducts = [
   {
     title: "Tube Fittings",
     description:
-      "Leak-tight tube fittings engineered for reliability in high-pressure upstream and industrial operations.",
+      "Leak-tight tube fittings engineered for reliability in high-pressure upstream operations.",
   },
   {
     title: "Valves",
@@ -194,12 +194,95 @@ export const leadership = [
   {
     name: "Ladi Soyombo",
     role: "Chairman / CEO",
-    bio: "A petroleum engineer with nearly two decades of industry experience, Ladi Soyombo leads SNL Technology's strategic growth across energy technology, fluid systems, and enterprise software services. His background spans petroleum economics, production optimization, reservoir management, and technology-driven business transformation.",
+    summary:
+      "A petroleum engineer with nearly two decades of industry experience, driving innovation, operational excellence, and strategic growth across energy technology, fluid systems, and software services.",
+    bio: [
+      "Ladi Soyombo is the Chairman and Chief Executive Officer of SNL Technology, a leading provider of technology and fluid system engineering solutions to Nigeria's energy and industrial sectors. A petroleum engineer with nearly two decades of industry experience, he has built a reputation for driving innovation, operational excellence, and strategic growth in the energy sector.",
+      "He holds an MSc in Petroleum Engineering from Heriot-Watt University and has completed executive education in Management at London Business School. His expertise spans petroleum economics, production optimization, reservoir management, and technology-driven business transformation.",
+      "Under his leadership, SNL Technology has established strategic relationships with global industry leaders including Swagelok and IFS, enabling the company to deliver advanced fluid system solutions and enterprise software services to upstream and industrial businesses across Nigeria. He is a strong advocate for leveraging emerging technologies such as real-time data systems, artificial intelligence, and automation to improve operational performance, efficiency, and sustainability within the energy industry.",
+      "Beyond his corporate responsibilities, Ladi is a passionate social entrepreneur and the founder of Innovate, a non-profit initiative focused on career development and business empowerment for young Nigerians.",
+    ],
+    image: "/images/team/ladi-soyombo.jpg",
+    linkedin: "https://www.linkedin.com/in/ladi-soyombo-baa83720",
   },
   {
     name: "Shuaibu Ismaila",
     role: "Managing Director",
-    bio: "A mechanical engineer and Certified Supply Chain Professional, Shuaibu Ismaila brings more than two decades of operational leadership within SNL Technology and Nigeria's oil and gas sector. His experience covers procurement, project execution, business transformation, ISO 9001:2015 certification, and high-performance team leadership.",
+    summary:
+      "A mechanical engineer and Certified Supply Chain Professional with over two decades of leadership experience within SNL Technology and Nigeria's oil and gas industry.",
+    bio: [
+      "Shuaibu Ismaila is the Managing Director of SNL Technology, bringing over two decades of leadership experience within the company and Nigeria's oil and gas industry. A Mechanical Engineer by training, he has played a pivotal role in driving the company's operational growth, strategic direction, and long-term business sustainability.",
+      "He is a Certified Supply Chain Professional (CSCP) accredited by the Association for Supply Chain Management and a member of the Institute of Supply Chain Management. His expertise spans supply chain management, procurement, project execution, operational leadership, and business transformation within the energy sector.",
+      "During his tenure at SNL Technology, Shuaibu has led several key milestones, including delivering a 42% year-on-year revenue growth, managing procurement for multi-million Naira EPC projects, securing strategic partnerships with major international oil companies, and overseeing the company's ISO 9001:2015 certification process. Known for his collaborative leadership style, he is focused on building high-performing teams and fostering a culture of accountability, innovation, and continuous improvement.",
+    ],
+    image: "/images/team/shuaibu-ismaila.jpg",
+    linkedin: "https://www.linkedin.com/in/shuaibu-ismaila-a76b66258",
+  },
+  {
+    name: "Ebere Gloria Nwigwe",
+    role: "Sales and Customer Service Manager",
+    summary:
+      "A customer engagement and procurement coordination leader with over 20 years of experience supporting major upstream oil and gas projects.",
+    bio: [
+      "Ebere Gloria Nwigwe is the Sales and Customer Service Manager at SNL Technology, with over 20 years of experience supporting client engagement, procurement coordination, and project delivery within Nigeria's oil and gas industry. She has played a key role in strengthening customer relationships and ensuring seamless operational support across major upstream projects.",
+      "She holds a BA (Hons) in International Relations, a Postgraduate Diploma and MSc in Project Management, and is currently pursuing a PhD in Project Management. Her professional certifications span Corporate Governance, Employment and Human Resources Management, Health, Safety and Environment (HSE Level 3 Supervisor), and Management Proficiency from the Nigerian Institute of Management. She also received specialized tube fitting installation training from Swagelok in London.",
+      "Ebere is a Fellow of the Institute of Corporate Governance, Employment and Human Resources Management and a Graduate Member of the Nigerian Institute of Management. Throughout her career at SNL Technology, she has successfully coordinated procurement and documentation support for major projects including the Ofon Phase II Project for TotalEnergies and the Assa North-Ohaji South Project for Shell Petroleum Development Company and Oilserv Limited. She has also contributed to the successful execution of procurement support across more than 20 projects within the energy sector.",
+      "Known for her strong interpersonal and organizational skills, Ebere is passionate about delivering excellent customer service while supporting efficient procurement operations through effective communication and coordination.",
+    ],
+    image: "/images/team/ebere-nwigwe.jpg",
+    linkedin: "https://www.linkedin.com/in/ebereglorianwigwe",
+  },
+  {
+    name: "Dave Okpe",
+    role: "Logistics Manager",
+    summary:
+      "A logistics and supply chain operations specialist with over 18 years of experience in warehousing, cargo handling, and delivery coordination.",
+    bio: [
+      "Dave Okpe is the Logistics Manager at SNL Technology, with over 18 years of experience overseeing logistics operations, warehousing, cargo handling, and supply chain coordination within Nigeria's oil and gas industry. He plays a critical role in ensuring the seamless movement and timely delivery of technical products and materials that support upstream operations.",
+      "He holds a BSc degree and has completed professional training in Human Management in the United States, Warehousing and Logistics in the United Kingdom, Cybersecurity in the United States, as well as leadership development programs in Nigeria. He is also affiliated with industry bodies including International Certified Management Consultants and PETRAC.",
+      "At SNL Technology, Dave has been instrumental in transforming the logistics function into an efficient plug-and-play operational hub, enhancing cargo clearing processes and enabling faster local deliveries to clients across the energy sector. Known for his proactive approach and operational discipline, he is committed to improving logistics efficiency, responsiveness, and service reliability.",
+    ],
+    image: "/images/team/dave-okpe.jpg",
+  },
+  {
+    name: "Akingbemi Akiode",
+    role: "Business Development Manager",
+    summary:
+      "A business development leader focused on strategic growth, client engagement, account reactivation, and market expansion in Nigeria's energy sector.",
+    bio: [
+      "Akingbemi Akiode is the Business Development Manager at SNL Technology, where he drives strategic business growth, client engagement, and market expansion initiatives within Nigeria's energy sector. Since joining the company, he has contributed significantly to strengthening client relationships, expanding business opportunities, and enhancing the company's industry visibility.",
+      "He holds a BSc degree and has completed professional certifications in Sales and Business Development from the Institute of Leadership and Management, Sales Excellence Professional training in Egypt, and Business Skills Competence certification from the London School of Business and Finance.",
+      "At SNL Technology, Akingbemi has successfully onboarded new clients, reactivated inactive accounts, and contributed to expanding the company's market presence through strategic engagement and professional platforms. He is passionate about building sustainable business relationships and positioning the company for long-term growth and industry relevance.",
+    ],
+    image: "/images/team/akingbemi-akiode.jpg",
+    linkedin: "https://www.linkedin.com/in/akingbemi-akiode-sep-sbdp-286ba712",
+  },
+  {
+    name: "Remilekun Akintunde",
+    role: "Head, Finance & Administration",
+    summary:
+      "A finance and administration leader with over 18 years of experience in financial management, governance, compliance, and operational support.",
+    bio: [
+      "Remilekun Akintunde is the Head of Finance & Administration at SNL Technology, with over 18 years of experience in financial management, corporate administration, and operational support within Nigeria's oil and gas industry. She plays a key role in driving the company's financial stability, governance, and administrative efficiency.",
+      "She holds an MBA in Finance and a BSc in Accounting, and is a Fellow Chartered Accountant (FCA) of the Institute of Chartered Accountants of Nigeria. Her expertise spans financial reporting, budgeting, internal controls, compliance, and strategic financial planning.",
+      "Throughout her career at SNL Technology, Remilekun has contributed significantly to strengthening the company's financial management systems and administrative processes. Her achievements include improving financial reporting and budgeting frameworks, implementing cost-control initiatives, enhancing compliance and internal control procedures, and providing effective financial oversight for major projects. Through her strategic leadership, she continues to support the company's operational efficiency, growth, and long-term sustainability.",
+    ],
+    image: "/images/team/remilekun-akintunde.jpg",
+    linkedin: "https://www.linkedin.com/in/akintunde-remilekun",
+  },
+  {
+    name: "Olujimi Somolu",
+    role: "Brand Communications & Marketing Manager",
+    summary:
+      "A brand communications and marketing professional leading corporate positioning, digital presence, content strategy, and external visibility initiatives.",
+    bio: [
+      "Olujimi Somolu is the Brand Communications & Marketing Manager at SNL Technology, where he leads the company's brand positioning, corporate communications, and marketing initiatives across digital and industry-facing platforms. With professional experience spanning agency and client-side communications since 2017, he has worked across diverse sectors including lifestyle, banking, finance, government, telecommunications, pharmaceuticals, NGOs, fintech, and energy.",
+      "He holds a BSc in International Law and Diplomacy and an MSc in Corporate Communications & Reputation Management. He is also an Associate of the Nigerian Institute of Public Relations.",
+      "At SNL Technology, Olujimi has played a key role in strengthening the company's brand visibility and corporate profile through strategic communications and marketing execution. He led the revamp of the company's website, reactivated and currently manages the company's and executive leadership's digital presence, and develops research-driven content calendars and brand communication strategies aligned with business objectives. His work spans corporate content development, executive profiling, thought leadership writing, video scripting and production direction, stakeholder communications, and external media publications.",
+      "He also leverages AI-driven tools, social media analytics, and performance insights to optimize marketing effectiveness and audience engagement. In addition, he collaborates with cross-functional teams, third-party agencies, and vendors to execute integrated communications campaigns, while identifying and securing strategic visibility opportunities for SNL Technology across industry events, webinars, and conferences.",
+    ],
+    image: "/images/team/olujimi-somolu.jpg",
+    linkedin: "https://www.linkedin.com/in/olujimi-somolu",
   },
 ];
 

@@ -50,8 +50,21 @@ body {
   100% { transform: scale(1.1) translate(-2%, -1%); }
 }
 
+@keyframes client-logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
 .animate-ken-burns {
   animation: ken-burns 20s ease-in-out infinite alternate;
+}
+
+.client-logo-marquee {
+  animation: client-logo-scroll 32s linear infinite;
 }
 
 .animate-fade-up {
@@ -69,7 +82,14 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up,
   .animate-fade-up-delay-1,
-  .animate-fade-up-delay-2 {
+  .animate-fade-up-delay-2,
+  .client-logo-marquee {
     animation: none;
+  }
+
+  .client-logo-marquee {
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
   }
 }

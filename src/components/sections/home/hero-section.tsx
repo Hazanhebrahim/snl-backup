@@ -60,22 +60,20 @@ export function HeroSection() {
           {/* ── Headline column ─────────────────────────────────────── */}
           <div className="relative z-10">
             <p className="animate-fade-up text-[11px] font-bold uppercase tracking-[0.2em] text-accent drop-shadow-md">
-              Swagelok Reseller · IFS Partner · Nigeria
+              We are SNL Technology
             </p>
 
             <h1 className="animate-fade-up-delay-1 mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl sm:leading-[1.08] lg:text-[3.25rem]">
-              Fluid systems and software for{" "}
-              <span className="text-primary drop-shadow-lg">
-                critical
-              </span>{" "}
-              operations
+              A technical and operational performance partner.
             </h1>
 
             <p className="animate-fade-up-delay-2 mt-6 max-w-xl text-lg leading-8 text-slate-300">
-              SNL Technology is a technical and operational performance partner
-              delivering Swagelok fluid system solutions, IFS enterprise
-              software services, and monitoring systems for upstream and
-              industrial teams across Nigeria and Africa.
+              Authorised Reseller of Swagelok Products for Swagelok
+              Sub-Saharan Africa and Partner of IFS in Nigeria.
+            </p>
+            <p className="animate-fade-up-delay-2 mt-4 max-w-2xl text-sm font-bold uppercase leading-7 tracking-[0.12em] text-white">
+              Fluid systems, software services and value-added services for
+              upstream, industrial and critical operations
             </p>
 
             <div
@@ -97,11 +95,14 @@ export function HeroSection() {
             className="animate-fade-up relative z-10 rounded-2xl border border-white/10 bg-navy-light/80 p-7 shadow-[0_0_40px_-10px_rgba(0,137,247,0.3)] backdrop-blur-md lg:mt-2"
             style={{ animationDelay: "0.32s" }}>
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-primary">
-              At a glance
+              Company profile
             </p>
 
             <dl className="mt-5 divide-y divide-white/10">
-              {trustStats.map((item) => (
+              {[
+                ...trustStats,
+                { label: "Focus", value: "Oil & Gas and Industrial" },
+              ].map((item) => (
                 <div
                   key={item.label}
                   className="flex items-baseline justify-between gap-4 py-3.5">
@@ -113,7 +114,7 @@ export function HeroSection() {
 
             <div className="mt-5 rounded-xl bg-primary/20 px-4 py-3 ring-1 ring-primary/40">
               <p className="text-xs font-medium leading-6 text-white drop-shadow-md">
-                Authorized reseller of Swagelok products for Swagelok
+                Authorised reseller of Swagelok products for Swagelok
                 Sub-Saharan Africa and partner of IFS in Nigeria.
               </p>
             </div>
@@ -125,11 +126,12 @@ export function HeroSection() {
       <div
         className="animate-fade-up relative mt-16 border-t border-slate-800/80"
         style={{ animationDelay: "0.42s" }}>
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-3 divide-x divide-slate-800/80 px-6">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-2 divide-x divide-y divide-slate-800/80 px-6 md:grid-cols-4 md:divide-y-0">
           {[
-            { value: "2005", label: "Established in Nigeria" },
+            { value: "2005", label: "Established" },
             { value: "20+", label: "Years in upstream and industrial sectors" },
-            { value: "2", label: "Global technology partner pillars" },
+            { value: "Oil & Gas", label: "Primary industry focus" },
+            { value: "Fluid + Software", label: "Products and services" },
           ].map((stat) => (
             <div key={stat.value} className="px-4 py-6 sm:px-8">
               <p className="text-xl font-bold tracking-tight text-white sm:text-2xl">

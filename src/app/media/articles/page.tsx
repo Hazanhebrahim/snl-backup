@@ -37,6 +37,18 @@ export default function ArticlesPage() {
       />
 
       <Section
+        eyebrow="Articles"
+        title="Technical articles coming soon"
+        description="This section is reserved for approved SNL Technology articles on fluid systems, monitoring, reliability, enterprise software, and digital operations.">
+        <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+          <p className="text-sm leading-7 text-slate-600">
+            No new article links were provided yet. The existing editorial lanes
+            below remain in place so future articles can be added cleanly.
+          </p>
+        </div>
+      </Section>
+
+      <Section
         title="Article lanes"
         description="These editorial lanes keep future content close to the company’s commercial strengths and customer questions.">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
