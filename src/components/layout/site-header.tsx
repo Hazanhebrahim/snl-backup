@@ -40,40 +40,52 @@ export function SiteHeader({ pathname }: SiteHeaderProps) {
 
               return hasChildren ? (
                 <div key={link.href} className="group relative">
-                  <Link
-                    href={link.href}
+                  <button
+                    type="button"
+                    aria-haspopup="menu"
+                    aria-expanded={isActive}
                     className={cn(
                       "relative flex items-center gap-1 rounded-full px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] transition-colors duration-200 lg:px-4 lg:text-[11px] lg:tracking-[0.16em]",
-                      isActive ? "text-white" : "text-slate-400 hover:text-white"
+                      isActive
+                        ? "text-white"
+                        : "text-slate-400 hover:text-white",
                     )}>
+                    {link.label === "Media" ? <MediaIcon /> : null}
                     <span className="relative z-10">{link.label}</span>
-                    <span className="relative z-10 text-[10px]" aria-hidden>
-                      v
-                    </span>
+
                     {isActive && (
                       <motion.div
                         layoutId="navbar-pill"
                         className="absolute inset-0 z-0 rounded-full bg-primary"
-                        transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                        transition={{
+                          type: "spring",
+                          bounce: 0.25,
+                          duration: 0.5,
+                        }}
                       />
                     )}
-                  </Link>
-                  <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-3 w-48 -translate-x-1/2 rounded-xl border border-white/10 bg-navy/95 p-2 opacity-0 shadow-2xl backdrop-blur-xl transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
-                    {link.children.map((child) => {
-                      const childActive = pathname === child.href;
+                  </button>
+                  <div
+                    role="menu"
+                    className="pointer-events-none absolute left-1/2 top-full z-50 w-48 -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                    <div className="rounded-xl border border-white/10 bg-navy/95 p-2 shadow-2xl backdrop-blur-xl">
+                      {link.children.map((child) => {
+                        const childActive = pathname === child.href;
 
-                      return (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className={cn(
-                            "block rounded-lg px-3 py-2 text-xs font-semibold text-slate-300 transition-colors hover:bg-white/10 hover:text-white",
-                            childActive && "bg-primary text-white"
-                          )}>
-                          {child.label}
-                        </Link>
-                      );
-                    })}
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            role="menuitem"
+                            className={cn(
+                              "block rounded-lg px-3 py-2 text-xs font-semibold text-slate-300 transition-colors hover:bg-white/10 hover:text-white",
+                              childActive && "bg-primary text-white",
+                            )}>
+                            {child.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -82,14 +94,18 @@ export function SiteHeader({ pathname }: SiteHeaderProps) {
                   href={link.href}
                   className={cn(
                     "relative rounded-full px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] transition-colors duration-200 lg:px-4 lg:text-[11px] lg:tracking-[0.16em]",
-                    isActive ? "text-white" : "text-slate-400 hover:text-white"
+                    isActive ? "text-white" : "text-slate-400 hover:text-white",
                   )}>
                   <span className="relative z-10">{link.label}</span>
                   {isActive && (
                     <motion.div
                       layoutId="navbar-pill"
                       className="absolute inset-0 z-0 rounded-full bg-primary"
-                      transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                      transition={{
+                        type: "spring",
+                        bounce: 0.25,
+                        duration: 0.5,
+                      }}
                     />
                   )}
                 </Link>
@@ -104,5 +120,26 @@ export function SiteHeader({ pathname }: SiteHeaderProps) {
         </div>
       </nav>
     </header>
+  );
+}
+
+function MediaIcon() {
+  return (
+    <svg
+      className="relative z-10 size-3.5"
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden>
+      <rect
+        x="2.25"
+        y="3.25"
+        width="11.5"
+        height="9.5"
+        rx="1.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path d="M6.75 6.1v3.8l3.3-1.9-3.3-1.9Z" fill="currentColor" />
+    </svg>
   );
 }

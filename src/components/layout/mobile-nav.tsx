@@ -11,6 +11,9 @@ type MobileNavProps = {
 
 export function MobileNav({ pathname }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(
+    pathname.startsWith("/media") ? "/media" : null,
+  );
 
   return (
     <div className="md:hidden">
@@ -60,21 +63,38 @@ export function MobileNav({ pathname }: MobileNavProps) {
                 (link.href !== "/" && pathname.startsWith(`${link.href}/`));
               const hasChildren = "children" in link && link.children;
 
-              return (
+              return hasChildren ? (
                 <div key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
+                  <button
+                    type="button"
+                    aria-expanded={openDropdown === link.href}
+                    aria-haspopup="menu"
+                    onClick={() =>
+                      setOpenDropdown((current) =>
+                        current === link.href ? null : link.href,
+                      )
+                    }
                     className={cn(
-                      "block rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
+                      "flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors",
                       isActive
                         ? "bg-slate-900 text-white"
                         : "text-slate-700 hover:bg-slate-100 hover:text-slate-900",
                     )}>
-                    {link.label}
-                  </Link>
-                  {hasChildren ? (
-                    <div className="ml-3 mt-1 border-l border-slate-200 pl-3">
+                    <span className="flex items-center gap-2">
+                      {link.label === "Media" ? <MediaIcon /> : null}
+                      {link.label}
+                    </span>
+                    <span
+                      className={cn(
+                        "transition-transform",
+                        openDropdown === link.href && "rotate-180",
+                      )}
+                      aria-hidden>
+                      v
+                    </span>
+                  </button>
+                  {openDropdown === link.href ? (
+                    <div role="menu" className="ml-3 mt-1 border-l border-slate-200 pl-3">
                       {link.children.map((child) => {
                         const childActive = pathname === child.href;
 
@@ -82,6 +102,7 @@ export function MobileNav({ pathname }: MobileNavProps) {
                           <Link
                             key={child.href}
                             href={child.href}
+                            role="menuitem"
                             onClick={() => setIsOpen(false)}
                             className={cn(
                               "block rounded-md px-3 py-2 text-sm transition-colors",
@@ -96,11 +117,44 @@ export function MobileNav({ pathname }: MobileNavProps) {
                     </div>
                   ) : null}
                 </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "block rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
+                    isActive
+                      ? "bg-slate-900 text-white"
+                      : "text-slate-700 hover:bg-slate-100 hover:text-slate-900",
+                  )}>
+                  {link.label}
+                </Link>
               );
             })}
           </nav>
         </div>
       ) : null}
     </div>
+  );
+}
+
+function MediaIcon() {
+  return (
+    <svg className="size-4" viewBox="0 0 16 16" fill="none" aria-hidden>
+      <rect
+        x="2.25"
+        y="3.25"
+        width="11.5"
+        height="9.5"
+        rx="1.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M6.75 6.1v3.8l3.3-1.9-3.3-1.9Z"
+        fill="currentColor"
+      />
+    </svg>
   );
 }
