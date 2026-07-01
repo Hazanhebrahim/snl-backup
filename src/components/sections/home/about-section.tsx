@@ -9,7 +9,7 @@ export function AboutSection() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           {/* ── Narrative ──────────────────────────────────────────── */}
           <FadeIn>
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-accent">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-eyebrow">
               Our story
             </p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
@@ -19,9 +19,8 @@ export function AboutSection() {
               SNL Technology was founded in 2005, in response to the drive for
               local content in Nigeria&apos;s upstream oil and gas sector. The
               company over the decades, has been a trusted partner to IOCs,
-              Indigenous Oil Companies, EPCs and industrial companies,
-              providing its clients with reliable fluid system and software
-              solutions.
+              Indigenous Oil Companies, EPCs and industrial companies, providing
+              its clients with reliable fluid system and software solutions.
             </p>
             <p className="mt-4 text-lg leading-8 text-muted-foreground">
               Our teams combine deep technical expertise with field experience,

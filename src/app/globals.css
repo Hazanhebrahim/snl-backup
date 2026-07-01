@@ -6,6 +6,7 @@
   --primary: #0089f7;
   --primary-foreground: #ffffff;
   --accent: #f5a700;
+  --eyebrow: #005ce1;
   --accent-foreground: #161922;
   --muted: #f2f2f2;
   --muted-foreground: #626262;
@@ -19,6 +20,7 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-accent: var(--accent);
+  --color-eyebrow: var(--eyebrow);
   --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
@@ -46,8 +48,12 @@ body {
 }
 
 @keyframes ken-burns {
-  0% { transform: scale(1) translate(0, 0); }
-  100% { transform: scale(1.1) translate(-2%, -1%); }
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.1) translate(-2%, -1%);
+  }
 }
 
 @keyframes client-logo-scroll {
@@ -59,8 +65,23 @@ body {
   }
 }
 
+@keyframes type-cursor {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .animate-ken-burns {
   animation: ken-burns 20s ease-in-out infinite alternate;
+}
+
+.animate-type-cursor {
+  animation: type-cursor 0.9s steps(1, end) infinite;
 }
 
 .client-logo-marquee {
@@ -83,6 +104,7 @@ body {
   .animate-fade-up,
   .animate-fade-up-delay-1,
   .animate-fade-up-delay-2,
+  .animate-type-cursor,
   .client-logo-marquee {
     animation: none;
   }

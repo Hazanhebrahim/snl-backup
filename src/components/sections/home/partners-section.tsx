@@ -8,16 +8,16 @@ export function PartnersSection() {
       <div className="mx-auto w-full max-w-6xl px-6">
         {/* Section header — centred for visual balance */}
         <FadeIn className="text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-accent">
+          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-eyebrow">
             Technology Partners
           </p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
             Global standards, local execution
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-muted-foreground">
-            SNL Technology connects global industrial technology with the local
-            engineering and operational discipline required to execute in
-            Nigeria and across Africa.
+            SNL Technology connects world class fluid systems and technology
+            with the local engineering and operational discipline required to
+            execute in Nigeria.
           </p>
         </FadeIn>
 
@@ -25,8 +25,8 @@ export function PartnersSection() {
           <div className="overflow-hidden rounded-xl border border-muted bg-white shadow-xl shadow-primary/5">
             <div className="border-b border-muted bg-primary/5 px-6 py-6 text-center sm:px-8">
               <p className="text-base font-bold text-navy">Swagelok + IFS</p>
-              <p className="mt-1 text-xs font-medium text-accent">
-                Fluid systems and enterprise software partnerships
+              <p className="mt-1 text-xs font-medium text-eyebrow">
+                Fluid systems products and enterprise software
               </p>
             </div>
 
@@ -53,22 +53,22 @@ export function PartnersSection() {
 
             <div className="grid gap-5 border-t border-muted px-6 py-6 sm:grid-cols-2 sm:px-8">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-eyebrow">
                   Authorised reseller
                 </p>
                 <p className="mt-2 text-sm leading-7 text-slate-600">
-                  SNL Technology is the authorised reseller of Swagelok
-                  products for Swagelok Sub-Saharan Africa.
+                  SNL Technology is the authorised reseller of Swagelok products
+                  for Swagelok Sub-Saharan Africa.
                 </p>
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-eyebrow">
                   Nigeria partner
                 </p>
                 <p className="mt-2 text-sm leading-7 text-slate-600">
-                  SNL Technology is the partner of IFS in Nigeria, supporting
-                  enterprise software services for upstream and industrial
-                  operators.
+                  SNL Technology is the local partner of IFS in Nigeria,
+                  providing enterprise software services for upstream and
+                  industrial operators.
                 </p>
               </div>
             </div>
@@ -76,11 +76,7 @@ export function PartnersSection() {
         </FadeIn>
 
         <FadeIn delay={0.18} className="mt-8 text-center">
-          <Button
-            href="/about"
-            label="About the company"
-            variant="ghost"
-          />
+          <Button href="/about" label="About the company" variant="ghost" />
         </FadeIn>
       </div>
     </section>

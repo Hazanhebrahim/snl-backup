@@ -9,21 +9,21 @@ export function ServicesSection() {
       <div className="mx-auto w-full max-w-6xl px-6">
         <FadeIn className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-accent">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-eyebrow">
               Products & Services
             </p>
             <h2 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
-              Fluid system solutions and enterprise software services
+              Fluid systems and enterprise software services
             </h2>
             <p className="mt-3 max-w-2xl text-lg leading-7 text-muted-foreground">
-              SNL Technology provides fluid system solutions from Swagelok
-              Sub-Saharan Africa and enterprise software services from IFS for
-              upstream, industrial, and critical operations.
+              SNL Technology provides fluid systems from Swagelok Sub-Saharan
+              Africa and enterprise software services from IFS for upstream,
+              industrial, and critical operations.
             </p>
           </div>
           <Button
             href="/services"
-            label="Explore services"
+            label="Projects"
             variant="ghost"
             size="sm"
             className="shrink-0"
@@ -31,7 +31,7 @@ export function ServicesSection() {
         </FadeIn>
 
         <ServiceGroup
-          eyebrow="Fluid system solutions from Swagelok Sub-Saharan Africa"
+          eyebrow="Fluid systems from Swagelok Sub-Saharan Africa"
           title="Leak-tight products for demanding operating environments"
           image="/images/service-swagelok-fluid-systems-generated.jpg"
           imageAlt="Swagelok fluid system components with valves and tubing"
@@ -80,7 +80,7 @@ function ServiceGroup({
             className="aspect-4/3 w-full object-cover"
           />
           <div className="p-6">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-eyebrow">
               {eyebrow}
             </p>
             <h3 className="mt-3 text-2xl font-bold text-navy">{title}</h3>

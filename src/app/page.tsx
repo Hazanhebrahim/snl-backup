@@ -22,15 +22,14 @@ export default function HomePage() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <SolutionsSection />
+      {/* <SolutionsSection /> */}
       <TrustSection />
       <PartnersSection />
       <ClientsLogoSection />
       <CtaBand
         title="Ready to improve reliability, visibility, or performance?"
         description="Talk to our team about your fluid system requirements, software priorities, or operational constraints. We'll help define a practical delivery path."
-        primaryCta={{ href: "/contact", label: "Book a consultation" }}
-        secondaryCta={{ href: "/project", label: "View project capability" }}
+        primaryCta={{ href: "/contact", label: "Contact Us" }}
       />
     </>
   );

@@ -51,15 +51,15 @@ export function ClientsLogoSection() {
     <section className="border-y border-slate-200 bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-6xl px-6">
         <FadeIn className="mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-accent">
-            Client Experience
+          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-eyebrow">
+            Clients
           </p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
             Trusted across Nigeria&apos;s energy sector
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-muted-foreground">
-            SNL Technology has supported operators, industrial companies, and
-            project teams across upstream, industrial, and critical operations.
+            SNL Technology has supported energy and industrial sectors across
+            upstream and critical operations.
           </p>
         </FadeIn>
 

@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "SNL Technology",
   description:
-    "SNL Technology delivers fluid system solutions, monitoring systems, and enterprise software services for upstream, industrial, and critical operations across Nigeria and Africa.",
+    "SNL Technology delivers fluid system products, monitoring systems, and enterprise software services for upstream, industrial, and critical operations across Nigeria.",
   phone: "+234 (0) 803 759 5235",
   email: "info@snltechnology.ng",
 };
@@ -9,12 +9,16 @@ export const siteConfig = {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/project", label: "Project" },
-  { href: "/media", label: "Media", children: [
-    { href: "/media/news", label: "News" },
-    { href: "/media/events", label: "Events" },
-    { href: "/media/articles", label: "Articles" },
-  ] },
+  { href: "/project", label: "Projects" },
+  {
+    href: "/media",
+    label: "Media",
+    children: [
+      { href: "/media/news", label: "News" },
+      { href: "/media/events", label: "Events" },
+      { href: "/media/articles", label: "Articles" },
+    ],
+  },
   { href: "/community-impact", label: "Community Impact" },
   { href: "/contact", label: "Contact" },
 ];
@@ -90,19 +94,23 @@ export const trustStats = [
 export const challenges = [
   {
     challenge: "Fluid system reliability",
-    outcome: "Leak-tight components, application support, and custom assemblies for high-pressure environments",
+    outcome:
+      "Leak-tight components, application support, and custom assemblies for high-pressure environments",
   },
   {
-    challenge: "Limited asset visibility",
-    outcome: "EAM, production data, and operational intelligence workflows for faster decisions",
+    challenge: "Asset visibility",
+    outcome:
+      "EAM, production data, and operational intelligence workflows for faster decisions",
   },
   {
-    challenge: "Maintenance inefficiency",
-    outcome: "Digital maintenance and reliability solutions that improve uptime and planning quality",
+    challenge: "Maintenance efficiency",
+    outcome:
+      "Digital maintenance and reliability solutions that improve uptime and planning quality",
   },
   {
-    challenge: "Project execution pressure",
-    outcome: "Local engineering support, authorized partnerships, and practical field delivery",
+    challenge: "Project execution",
+    outcome:
+      "Local engineering support, authorized partnerships, and practical field delivery",
   },
 ];
 
@@ -115,7 +123,7 @@ export const differentiators = [
   {
     label: "Authorized partner",
     description:
-      "Authorized reseller of Swagelok products for Swagelok Sub-Saharan Africa and partner of IFS in Nigeria.",
+      "Authorized reseller of Swagelok products for Swagelok Sub-Saharan Africa and local partner of IFS in Nigeria.",
   },
   {
     label: "Integrated delivery",

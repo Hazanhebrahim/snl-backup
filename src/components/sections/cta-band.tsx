@@ -7,12 +7,7 @@ type CtaBandProps = {
   secondaryCta?: { href: string; label: string };
 };
 
-export function CtaBand({
-  title,
-  description,
-  primaryCta,
-  secondaryCta,
-}: CtaBandProps) {
+export function CtaBand({ title, description, primaryCta }: CtaBandProps) {
   return (
     <section className="bg-primary py-16 sm:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.2),transparent_70%)] pointer-events-none" />
@@ -27,16 +22,13 @@ export function CtaBand({
             </p>
           </div>
           <div className="flex shrink-0 flex-wrap gap-3">
-            <Button href={primaryCta.href} label={primaryCta.label} size="lg" />
-            {secondaryCta ? (
-              <Button
-                href={secondaryCta.href}
-                label={secondaryCta.label}
-                variant="ghost"
-                size="lg"
-                className="text-white ring-white/20 hover:bg-white/10 hover:text-white"
-              />
-            ) : null}
+            <Button
+              href={primaryCta.href}
+              label={primaryCta.label}
+              size="lg"
+              className="text-white ring-white/20 hover:bg-white/10 hover:text-white"
+              variant="ghost"
+            />
           </div>
         </div>
       </div>
