@@ -211,6 +211,7 @@ export const leadership = [
       "Beyond his corporate responsibilities, Ladi is a passionate social entrepreneur and the founder of Innovate, a non-profit initiative focused on career development and business empowerment for young Nigerians.",
     ],
     image: "/images/team/ladi-soyombo.jpg",
+    imageClassName: "object-[50%_26%]",
     linkedin: "https://www.linkedin.com/in/ladi-soyombo-baa83720",
   },
   {
@@ -263,6 +264,7 @@ export const leadership = [
       "At SNL Technology, Akingbemi has successfully onboarded new clients, reactivated inactive accounts, and contributed to expanding the company's market presence through strategic engagement and professional platforms. He is passionate about building sustainable business relationships and positioning the company for long-term growth and industry relevance.",
     ],
     image: "/images/team/akingbemi-akiode.jpg",
+    imageClassName: "object-[50%_18%]",
     linkedin: "https://www.linkedin.com/in/akingbemi-akiode-sep-sbdp-286ba712",
   },
   {

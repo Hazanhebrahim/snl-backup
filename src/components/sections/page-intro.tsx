@@ -19,7 +19,7 @@ export function PageIntro({
     <section className="relative overflow-hidden border-b border-muted bg-linear-to-b from-primary/5 via-white to-white py-16 mt-14 sm:py-24">
       <div className="mx-auto w-full max-w-6xl px-6 relative z-10">
         {eyebrow ? (
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-accent">
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-eyebrow">
             {eyebrow}
           </p>
         ) : null}

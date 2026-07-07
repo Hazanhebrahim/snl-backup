@@ -22,7 +22,7 @@ export function Section({
       <div className="mx-auto w-full max-w-6xl px-6">
         <div className="max-w-3xl">
           {eyebrow ? (
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-accent">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-eyebrow">
               {eyebrow}
             </p>
           ) : null}

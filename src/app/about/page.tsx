@@ -19,21 +19,22 @@ export default function AboutPage() {
     <>
       <PageIntro
         eyebrow="The Company"
-        title="Technology and fluid system solutions for demanding operations"
-        description="SNL Technology supports Nigeria's upstream and industrial sectors with monitoring systems, Swagelok fluid system solutions, IFS software services, and practical field execution."
+        title="Technology and fluid system products and software services."
+        description="SNL Technology supports Nigeria's upstream and industrial sectors with monitoring systems, Swagelok fluid system products and IFS software services."
         primaryCta={{ href: "/contact", label: "Speak with our team" }}
       />
 
       <Section
         eyebrow="Who we are"
-        title="Built for reliable execution in demanding environments"
-        description="SNL Technology is a leading provider of monitoring systems, fluid system solutions, and software services to Nigeria's upstream and industrial sectors. As an authorised reseller for Swagelok Sub-Saharan Africa and partner of IFS in Nigeria, the company has supported some of the country's largest and most significant upstream and industrial projects.">
+        title="Ensuring relianility in demanding operations"
+        description="SNL Technology is a leading provider of monitoring systems, fluid system products, and software services to Nigeria's upstream and industrial sectors. As an authorised reseller for Swagelok Sub-Saharan Africa and partner of IFS in Nigeria, the company has supported some of the country's largest and most significant upstream and industrial projects.">
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-xl border border-slate-200 p-6">
             <h3 className="font-semibold text-slate-900">Vision</h3>
             <p className="mt-3 text-sm leading-7 text-slate-600">
               To be the preferred partner in empowering upstream and industrial
-              companies with reliable fluid and software solutions.
+              companies with reliable fluid system products and software
+              services.
             </p>
           </div>
           <div className="rounded-xl border border-slate-200 p-6">
@@ -56,7 +57,7 @@ export default function AboutPage() {
       <Section
         eyebrow="Our history"
         title="Two decades of upstream and industrial experience"
-        description="Over the decades, SNL Technology has been a trusted partner to IOCs, indigenous oil companies, EPCs, and industrial companies across Nigeria's upstream oil and gas sector.">
+        description="Over the decades, SNL Technology has been a trusted partner to IOCs, indigenous oil companies, EPCs, and industrial companies across Nigeria's upstream and industrial sectors">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div className="overflow-hidden rounded-xl border border-slate-200">
             <Image
@@ -84,7 +85,7 @@ export default function AboutPage() {
 
       <Section
         eyebrow="Credentials"
-        title="Experience and partnerships"
+        title="Experience and Affiliations"
         description="The depth and trust that underpin every engagement.">
         <div className="grid gap-5 sm:grid-cols-3">
           {differentiators.map((item) => (

@@ -10,6 +10,7 @@ type Leader = {
   summary: string;
   bio: string[];
   image?: string;
+  imageClassName?: string;
   linkedin?: string;
 };
 
@@ -45,19 +46,15 @@ export function LeadershipSection({ leaders }: LeadershipSectionProps) {
   return (
     <>
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {leaders.map((leader, index) => (
+        {leaders.map((leader) => (
           <article
             key={leader.name}
-            className={`flex min-h-96 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 ${
-              index === 0 ? "xl:col-span-2 xl:grid xl:grid-cols-[minmax(260px,0.85fr)_1fr]" : ""
-            }`}>
+            className="flex min-h-96 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
             <ProfileImage
               leader={leader}
               failedImages={failedImages}
               setFailedImages={setFailedImages}
-              className={`aspect-4/3 w-full ${
-                index === 0 ? "xl:aspect-auto xl:h-full" : ""
-              }`}
+              className="aspect-4/3 w-full"
             />
             <div className="flex flex-1 flex-col p-6">
               <div className="flex items-start justify-between gap-4">
@@ -81,9 +78,7 @@ export function LeadershipSection({ leaders }: LeadershipSectionProps) {
                 ) : null}
               </div>
               <p className="mt-5 flex-1 text-sm leading-7 text-slate-600">
-                {index === 0
-                  ? `${leader.summary} His expertise spans petroleum economics, production optimization, reservoir management, and technology-driven business transformation.`
-                  : leader.summary}
+                {leader.summary}
               </p>
               <button
                 type="button"
@@ -186,7 +181,7 @@ function ProfileImage({
           alt={`${leader.name} portrait`}
           fill
           sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-          className="object-cover object-top"
+          className={`object-cover ${leader.imageClassName ?? "object-top"}`}
           onError={() =>
             setFailedImages((current) => ({
               ...current,

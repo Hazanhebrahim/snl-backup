@@ -85,9 +85,9 @@ export default function ProjectsPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Project"
-        title="Delivery support for critical operating environments"
-        description="SNL Technology supports project teams with practical engineering capability across fluid systems, monitoring, enterprise software, and field execution."
+        eyebrow=""
+        title="Delivering support for critical operating environments"
+        description="SNL Technology supports project teams with reliable products and services across fluid systems and enterprise software."
         primaryCta={{ href: "/contact", label: "Discuss a project" }}
       />
 
@@ -101,9 +101,7 @@ export default function ProjectsPage() {
               key={project.title}
               className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex items-start justify-between gap-4">
-                <h2 className="text-lg font-bold text-navy">
-                  {project.title}
-                </h2>
+                <h2 className="text-lg font-bold text-navy">{project.title}</h2>
                 <span className="shrink-0 rounded-md bg-primary/10 px-3 py-1 text-sm font-bold text-primary">
                   {project.year}
                 </span>
@@ -150,7 +148,9 @@ export default function ProjectsPage() {
           />
           <div className="grid gap-5 sm:grid-cols-2">
             {projectTracks.map((track) => (
-              <article key={track.title} className="rounded-xl border border-slate-200 bg-white p-6">
+              <article
+                key={track.title}
+                className="rounded-xl border border-slate-200 bg-white p-6">
                 <h2 className="text-lg font-bold text-navy">{track.title}</h2>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   {track.description}
@@ -167,7 +167,9 @@ export default function ProjectsPage() {
         description="As approved project information becomes available, this section should carry client sector, scope, products or systems supplied, dates, photos, safety notes, and measurable results.">
         <div className="grid gap-5 md:grid-cols-4">
           {proofPoints.map((point) => (
-            <div key={point} className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+            <div
+              key={point}
+              className="rounded-xl border border-slate-200 bg-slate-50 p-6">
               <p className="text-sm font-semibold leading-7 text-slate-800">
                 {point}
               </p>
