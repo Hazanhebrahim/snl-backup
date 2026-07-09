@@ -12,35 +12,35 @@ export const metadata: Metadata = createMetadata({
   path: "/project",
 });
 
-const projectTracks = [
-  {
-    title: "Fluid system delivery",
-    description:
-      "Swagelok product supply, tube fitting selection, manifolds, regulators, valves, and custom assemblies for critical environments.",
-  },
-  {
-    title: "Monitoring systems",
-    description:
-      "Instrumentation, field-ready monitoring hardware, and visibility solutions for upstream, midstream, and industrial sites.",
-  },
-  {
-    title: "Software enablement",
-    description:
-      "IFS-aligned asset management, production data, operational intelligence, maintenance, and ERP support.",
-  },
-  {
-    title: "Field support",
-    description:
-      "Installation guidance, commissioning support, diagnostics, technical training, and operational handover assistance.",
-  },
-];
+// const projectTracks = [
+//   {
+//     title: "Fluid system delivery",
+//     description:
+//       "Swagelok product supply, tube fitting selection, manifolds, regulators, valves, and custom assemblies for critical environments.",
+//   },
+//   {
+//     title: "Monitoring systems",
+//     description:
+//       "Instrumentation, field-ready monitoring hardware, and visibility solutions for upstream, midstream, and industrial sites.",
+//   },
+//   {
+//     title: "Software enablement",
+//     description:
+//       "IFS-aligned asset management, production data, operational intelligence, maintenance, and ERP support.",
+//   },
+//   {
+//     title: "Field support",
+//     description:
+//       "Installation guidance, commissioning support, diagnostics, technical training, and operational handover assistance.",
+//   },
+// ];
 
-const proofPoints = [
-  "Upstream and industrial experience since 2005",
-  "Authorized Swagelok product support",
-  "IFS partnership in Nigeria",
-  "Local engineering and delivery presence",
-];
+// const proofPoints = [
+//   "Upstream and industrial experience since 2005",
+//   "Authorized Swagelok product support",
+//   "IFS partnership in Nigeria",
+//   "Local engineering and delivery presence",
+// ];
 
 const deliveredProjects = [
   {
@@ -92,9 +92,9 @@ export default function ProjectsPage() {
       />
 
       <Section
-        eyebrow="Projects"
-        title="Delivering performance across Nigeria's energy sector"
-        description="For over two decades, SNL Technology has supported major energy projects with world-class fluid system solutions and enterprise software capabilities that enhance safety, reliability, and operational performance.">
+        eyebrow="Some Past Projects"
+        title="Delivering performance across Nigeria's energy and industrial sectors"
+        description="For over two decades, SNL Technology has supported major energy and industrial projects with world-class fluid system products and software services.">
         <div className="grid gap-5 md:grid-cols-2">
           {deliveredProjects.map((project) => (
             <article
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
       <Section
         eyebrow="Technology & software solutions"
         title="Enterprise software for operational visibility"
-        description="As the local partner of IFS in Nigeria, SNL Technology delivers enterprise software solutions that help upstream energy operators optimize production, improve asset performance, strengthen operational visibility, and make faster, data-driven decisions across their operations.">
+        description="As the local partner of IFS in Nigeria, SNL Technology has delivered enterprise software solutions that have helped upstream energy operators optimize production, improve asset performance, strengthen operational visibility, and make faster, data-driven decisions across their operations.">
         <div className="grid gap-5 md:grid-cols-3">
           {[
             "Production optimization",
@@ -135,7 +135,7 @@ export default function ProjectsPage() {
         </div>
       </Section>
 
-      <Section
+      {/* <Section
         title="How project work is organized"
         description="The page now focuses on the work customers need to evaluate: what SNL Technology can deliver, where it fits, and what evidence belongs in future case studies.">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -176,11 +176,12 @@ export default function ProjectsPage() {
             </div>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
       <CtaBand
-        title="Have a project requirement?"
-        description="Share the operating context, project scope, and constraints. Our team will help map the right fluid system, monitoring, or software pathway."
+        title="Have a project ?"
+        description=""
+        // description="Share the operating context, project scope, and constraints. Our team will help map the right fluid system, monitoring, or software pathway."
         primaryCta={{ href: "/contact", label: "Contact our team" }}
       />
     </>
