@@ -46,7 +46,7 @@ const externalNews = [
   {
     title:
       "SNL Technology partners with IFS to revolutionise Nigeria's energy landscape",
-    source: "APIE Project",
+    source: "APIE News",
     href: "https://appsaf.apieproject.com/news/2023/05/29/snl-technology-partners-with-ifs-to-revolutionise-nigerias-energy-landscape-an-exclusive-interview-with-snl-techs-ceo-ladi-soyombo/",
   },
   {
@@ -60,15 +60,16 @@ const externalNews = [
 export default function NewsPage() {
   return (
     <>
-      <PageIntro
+      {/* <PageIntro
         eyebrow="Media / News"
         title="News that keeps customers and partners current"
         description="A clean newsroom for approved announcements, partner updates, and operational milestones from SNL Technology."
-      />
+      /> */}
+      <div className="mt-24"></div>
 
       <Section
         eyebrow="News"
-        title="SNL Technology in the media"
+        title="SNL Technology in the news"
         description="External coverage and partner stories about SNL Technology's work in software, digital operations, and energy-sector transformation.">
         <div className="grid gap-5 md:grid-cols-2">
           {externalNews.map((item) => (
@@ -78,13 +79,13 @@ export default function NewsPage() {
               target="_blank"
               rel="noreferrer"
               className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-eyebrow">
                 {item.source}
               </p>
               <h2 className="mt-3 text-lg font-bold leading-7 text-navy group-hover:text-primary">
                 {item.title}
               </h2>
-              <p className="mt-5 text-sm font-semibold text-primary">
+              <p className="mt-5 text-sm font-semibold text-eyebrow underline">
                 Read story
               </p>
             </Link>
@@ -92,13 +93,15 @@ export default function NewsPage() {
         </div>
       </Section>
 
-      <Section
+      {/* <Section
         title="Newsroom structure"
         description="Use this page for timely, factual updates that help customers understand what has changed and why it matters.">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="grid gap-5">
             {newsItems.map((item) => (
-              <article key={item.title} className="rounded-xl border border-slate-200 bg-white p-6">
+              <article
+                key={item.title}
+                className="rounded-xl border border-slate-200 bg-white p-6">
                 <h2 className="text-lg font-bold text-navy">{item.title}</h2>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   {item.description}
@@ -114,7 +117,7 @@ export default function NewsPage() {
             className="aspect-4/3 w-full rounded-xl object-cover"
           />
         </div>
-      </Section>
+      </Section> */}
     </>
   );
 }

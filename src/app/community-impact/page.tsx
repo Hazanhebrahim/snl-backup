@@ -40,12 +40,13 @@ const metrics = [
 export default function CommunityImpactPage() {
   return (
     <>
-      <PageIntro
+      {/* <PageIntro
         eyebrow="Community Impact"
         title="Investing in people, capability, and local opportunity"
         description="SNL Technology’s community impact work should show how the business contributes beyond operations through career development, business empowerment, and technical exposure."
         primaryCta={{ href: "/contact", label: "Partner with us" }}
-      />
+      /> */}
+      <div className="mt-24"></div>
 
       <Section
         eyebrow="Community impact"
@@ -56,7 +57,7 @@ export default function CommunityImpactPage() {
           target="_blank"
           rel="noreferrer"
           className="group block rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-eyebrow">
             Featured coverage
           </p>
           <h2 className="mt-3 max-w-3xl text-xl font-bold leading-8 text-navy group-hover:text-primary">
@@ -66,9 +67,7 @@ export default function CommunityImpactPage() {
             Read the Punch coverage of Innovate 2026 and its support for
             entrepreneurs and emerging business builders.
           </p>
-          <p className="mt-5 text-sm font-semibold text-primary">
-            Read story
-          </p>
+          <p className="mt-5 text-sm font-semibold text-primary">Read story</p>
         </Link>
       </Section>
 
@@ -79,7 +78,9 @@ export default function CommunityImpactPage() {
           <div>
             <div className="grid gap-4 sm:grid-cols-3">
               {metrics.map((metric) => (
-                <div key={metric.label} className="rounded-xl border border-slate-200 bg-white p-5">
+                <div
+                  key={metric.label}
+                  className="rounded-xl border border-slate-200 bg-white p-5">
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-400">
                     {metric.label}
                   </p>
@@ -112,13 +113,15 @@ export default function CommunityImpactPage() {
         </div>
       </Section>
 
-      <Section
+      {/* <Section
         eyebrow="Focus areas"
         title="Where impact work can show up"
         description="These lanes make it easier to publish real stories while keeping the page aligned with SNL Technology’s operational credibility.">
         <div className="grid gap-5 md:grid-cols-3">
           {impactAreas.map((area) => (
-            <article key={area.title} className="rounded-xl border border-slate-200 bg-white p-6">
+            <article
+              key={area.title}
+              className="rounded-xl border border-slate-200 bg-white p-6">
               <h2 className="text-lg font-bold text-navy">{area.title}</h2>
               <p className="mt-3 text-sm leading-7 text-slate-600">
                 {area.description}
@@ -132,7 +135,7 @@ export default function CommunityImpactPage() {
         title="Have an impact partnership idea?"
         description="Talk to SNL Technology about community, capability, or local-content initiatives that fit our technical mission."
         primaryCta={{ href: "/contact", label: "Start a conversation" }}
-      />
+      /> */}
     </>
   );
 }

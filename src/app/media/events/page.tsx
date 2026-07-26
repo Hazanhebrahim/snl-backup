@@ -47,17 +47,19 @@ const eventLinks = [
 export default function EventsPage() {
   return (
     <>
-      <PageIntro
+      {/* <PageIntro
         eyebrow="Media / Events"
         title="Technical sessions, workshops, and industry engagements"
         description="Events should help customers see where SNL Technology is teaching, demonstrating, and participating across the sectors it serves."
         primaryCta={{ href: "/contact", label: "Ask about upcoming events" }}
-      />
+      /> */}
+      <div className="mt-24"></div>
 
       <Section
         eyebrow="Events"
-        title="Recent event and people updates"
-        description="Selected LinkedIn updates covering SNL Technology leadership, people, culture, and industry engagement.">
+        title="Recent events"
+        // description="Selected LinkedIn updates covering SNL Technology leadership, people, culture, and industry engagement."
+        description="">
         <div className="grid gap-5 md:grid-cols-2">
           {eventLinks.map((item) => (
             <Link
@@ -66,21 +68,21 @@ export default function EventsPage() {
               target="_blank"
               rel="noreferrer"
               className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-eyebrow">
                 {item.source}
               </p>
               <h2 className="mt-3 text-lg font-bold leading-7 text-navy group-hover:text-primary">
                 {item.title}
               </h2>
-              <p className="mt-5 text-sm font-semibold text-primary">
-                View update
+              <p className="mt-5 text-sm font-semibold text-eyebrow underline">
+                View
               </p>
             </Link>
           ))}
         </div>
       </Section>
 
-      <Section
+      {/* <Section
         title="Event coverage framework"
         description="This page can carry upcoming sessions, post-event recaps, partner-led programmes, and registration calls when dates are approved.">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
@@ -93,7 +95,9 @@ export default function EventsPage() {
           />
           <div className="grid gap-4 sm:grid-cols-2">
             {eventTracks.map((track) => (
-              <article key={track} className="rounded-xl border border-slate-200 bg-white p-6">
+              <article
+                key={track}
+                className="rounded-xl border border-slate-200 bg-white p-6">
                 <p className="text-sm font-semibold leading-7 text-slate-800">
                   {track}
                 </p>
@@ -101,7 +105,7 @@ export default function EventsPage() {
             ))}
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       <CtaBand
         title="Planning a technical session?"

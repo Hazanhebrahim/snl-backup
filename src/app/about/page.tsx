@@ -26,7 +26,7 @@ export default function AboutPage() {
 
       <Section
         eyebrow="Who we are"
-        title="Ensuring relianility in demanding operations"
+        title="Ensuring reliability in demanding operations"
         description="SNL Technology is a leading provider of monitoring systems, fluid system products, and software services to Nigeria's upstream and industrial sectors. As an authorised reseller for Swagelok Sub-Saharan Africa and partner of IFS in Nigeria, the company has supported some of the country's largest and most significant upstream and industrial projects.">
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-xl border border-slate-200 p-6">

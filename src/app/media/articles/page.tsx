@@ -32,11 +32,12 @@ const articleTopics = [
 export default function ArticlesPage() {
   return (
     <>
-      <PageIntro
+      {/* <PageIntro
         eyebrow="Media / Articles"
         title="Useful technical insight for asset-intensive teams"
         description="Articles give SNL Technology a place to explain problems, solutions, and practical decision points across its service portfolio."
-      />
+      /> */}
+      <div className="mt-24"></div>
 
       <Section
         eyebrow="Articles"
@@ -50,13 +51,15 @@ export default function ArticlesPage() {
         </div>
       </Section>
 
-      <Section
+      {/* <Section
         title="Article lanes"
         description="These editorial lanes keep future content close to the company’s commercial strengths and customer questions.">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div className="space-y-5">
             {articleTopics.map((topic) => (
-              <article key={topic.title} className="rounded-xl border border-slate-200 bg-white p-6">
+              <article
+                key={topic.title}
+                className="rounded-xl border border-slate-200 bg-white p-6">
                 <h2 className="text-lg font-bold text-navy">{topic.title}</h2>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   {topic.description}
@@ -72,7 +75,7 @@ export default function ArticlesPage() {
             className="aspect-4/3 w-full rounded-xl object-cover"
           />
         </div>
-      </Section>
+      </Section> */}
     </>
   );
 }
