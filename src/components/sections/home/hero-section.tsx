@@ -114,7 +114,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative flex flex-col overflow-hidden pb-0 pt-28 sm:pt-32 lg:min-h-[100svh]"
+      className="relative flex flex-col overflow-hidden pb-0 pt-28 sm:pt-32 lg:min-h-svh"
       style={{ backgroundColor: heroBlue }}>
       {/* ── Background Slider ───────────────────────────────────────── */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -216,7 +216,7 @@ export function HeroSection() {
                 href="/contact"
                 label="Contact Us"
                 size="lg"
-                className="bg-white text-[#1478FF] shadow-none lg:w-50 hover:bg-white/90 focus-visible:ring-white"
+                className="bg-white text-black shadow-none lg:w-50 hover:bg-white/90 focus-visible:ring-white"
               />
             </div>
           </div>
@@ -242,11 +242,11 @@ export function HeroSection() {
                 </div>
               ))}
             </dl>
-
-            <div className="mt-5 rounded-xl bg-white/10 px-4 py-3 ring-1 ring-white/25">
-              <p className="text-xs font-medium leading-6 text-white drop-shadow-md">
-                Authorised reseller of Swagelok products for Swagelok
-                Sub-Saharan Africa and partner of IFS in Nigeria.
+            <div className="mt-6 overflow-hidden rounded-2xl border border-white/45 bg-white/95 shadow-[0_18px_45px_-18px_rgba(0,0,0,0.65)]">
+              {/* <div className="h-1.5 bg-eyebrow" /> */}
+              <p className="px-4 py-4 text-[15px] font-extrabold leading-6 text-black text-center shadow-sm sm:px-5">
+                Authorised reseller of <br /> Swagelok products for <br />{" "}
+                Swagelok Sub-Saharan Africa and partner of IFS in Nigeria
               </p>
             </div>
           </aside>

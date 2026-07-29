@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
-import { CtaBand } from "@/components/sections/cta-band";
+import { PostCardGrid } from "@/components/sections/cms/post-card-grid";
+import {
+  fallbackCommunityImpactPosts,
+  getCollection,
+} from "@/sanity/cms";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -13,31 +15,18 @@ export const metadata: Metadata = createMetadata({
   path: "/community-impact",
 });
 
-const impactAreas = [
-  {
-    title: "Career development",
-    description:
-      "Programmes that help young professionals understand technical careers, workplace readiness, and industry expectations.",
-  },
-  {
-    title: "Business empowerment",
-    description:
-      "Support for enterprise thinking, local capability, and practical pathways into industrial value chains.",
-  },
-  {
-    title: "Technical exposure",
-    description:
-      "Training-led initiatives that connect community development with engineering, safety, and operational discipline.",
-  },
-];
-
 const metrics = [
   { label: "Impact anchor", value: "Innovate" },
   { label: "Focus", value: "Youth capability" },
   { label: "Scope", value: "Career + business" },
 ];
 
-export default function CommunityImpactPage() {
+export default async function CommunityImpactPage() {
+  const posts = await getCollection(
+    "communityImpactPost",
+    fallbackCommunityImpactPosts,
+  );
+
   return (
     <>
       {/* <PageIntro
@@ -52,23 +41,11 @@ export default function CommunityImpactPage() {
         eyebrow="Community impact"
         title="Supporting Innovate's entrepreneurship and career mission"
         description="SNL Technology is one of the sponsors of Innovate, a non-profit organization that works to empower entrepreneurs and career professionals, equipping them with the skills and network they need to thrive.">
-        <Link
-          href="https://punchng.com/navidyn-tuntunre-win-5000-at-innovate-2026/"
-          target="_blank"
-          rel="noreferrer"
-          className="group block rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-eyebrow">
-            Featured coverage
-          </p>
-          <h2 className="mt-3 max-w-3xl text-xl font-bold leading-8 text-navy group-hover:text-primary">
-            Navidyn, Tuntunre win $5,000 at Innovate 2026
-          </h2>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">
-            Read the Punch coverage of Innovate 2026 and its support for
-            entrepreneurs and emerging business builders.
-          </p>
-          <p className="mt-5 text-sm font-semibold text-primary">Read story</p>
-        </Link>
+        <PostCardGrid
+          posts={posts}
+          emptyMessage="No community impact updates have been published yet."
+          internalBasePath="/community-impact"
+        />
       </Section>
 
       <Section

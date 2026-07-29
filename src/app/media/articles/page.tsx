@@ -1,35 +1,24 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
-import { createMetadata } from "@/lib/seo";
+import { PostCardGrid } from "@/components/sections/cms/post-card-grid";
+import {
+  fallbackArticlePosts,
+  getCollection,
+  getPageMetadata,
+} from "@/sanity/cms";
 
-export const metadata: Metadata = createMetadata({
-  title: "Articles | Fluid Systems, Monitoring & Digital Operations",
-  description:
-    "Read SNL Technology technical articles on fluid system reliability, operational visibility, monitoring, maintenance, enterprise asset management, and digital operations.",
-  path: "/media/articles",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return getPageMetadata("mediaPage", {
+    title: "Articles | Fluid Systems, Monitoring & Digital Operations",
+    description:
+      "Read SNL Technology technical articles on fluid system reliability, operational visibility, monitoring, maintenance, enterprise asset management, and digital operations.",
+    path: "/media/articles",
+  });
+}
 
-const articleTopics = [
-  {
-    title: "Fluid system reliability",
-    description:
-      "Practical guidance on fittings, valves, regulators, tube routing, and system integrity.",
-  },
-  {
-    title: "Operational visibility",
-    description:
-      "How monitoring, instrumentation, and data workflows improve maintenance and production decisions.",
-  },
-  {
-    title: "Digital operations",
-    description:
-      "Asset management, maintenance planning, production data, and business application perspectives.",
-  },
-];
+export default async function ArticlesPage() {
+  const posts = await getCollection("articlePost", fallbackArticlePosts);
 
-export default function ArticlesPage() {
   return (
     <>
       {/* <PageIntro
@@ -43,12 +32,11 @@ export default function ArticlesPage() {
         eyebrow="Articles"
         title="Technical articles coming soon"
         description="This section is reserved for approved SNL Technology articles on fluid systems, monitoring, reliability, enterprise software, and digital operations.">
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
-          <p className="text-sm leading-7 text-slate-600">
-            No new article links were provided yet. The existing editorial lanes
-            below remain in place so future articles can be added cleanly.
-          </p>
-        </div>
+        <PostCardGrid
+          posts={posts}
+          emptyMessage="No articles have been published yet."
+          internalBasePath="/media/articles"
+        />
       </Section>
 
       {/* <Section

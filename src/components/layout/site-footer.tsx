@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { footerLinks, siteConfig } from "@/content/site";
 
+type SiteFooterProps = {
+  settings?: typeof siteConfig;
+  links?: typeof footerLinks;
+};
+
 const socialLinks = [
   {
     href: "https://ng.linkedin.com/company/snl-technology",
@@ -13,16 +18,19 @@ const socialLinks = [
   },
 ];
 
-export function SiteFooter() {
+export function SiteFooter({
+  settings = siteConfig,
+  links = footerLinks,
+}: SiteFooterProps) {
   return (
     <footer className="mt-auto border-t border-slate-200 bg-slate-950 text-slate-200">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.12em] text-cyan-300">
-            {siteConfig.name}
+            {settings.name}
           </p>
           <p className="mt-4 text-sm leading-7 text-slate-300">
-            {siteConfig.description}
+            {settings.description}
           </p>
         </div>
 
@@ -31,7 +39,7 @@ export function SiteFooter() {
             Navigation
           </p>
           <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2">
-            {footerLinks.map((link) => (
+            {links.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
@@ -47,8 +55,8 @@ export function SiteFooter() {
           <p className="text-sm font-semibold uppercase tracking-[0.12em] text-cyan-300">
             Contact
           </p>
-          <p className="mt-4 text-sm text-slate-300">{siteConfig.phone}</p>
-          <p className="mt-2 text-sm text-slate-300">{siteConfig.email}</p>
+          <p className="mt-4 text-sm text-slate-300">{settings.phone}</p>
+          <p className="mt-2 text-sm text-slate-300">{settings.email}</p>
           <div className="mt-5 flex gap-3">
             {socialLinks.map((link) => (
               <Link
@@ -63,7 +71,7 @@ export function SiteFooter() {
             ))}
           </div>
           <p className="mt-6 text-xs text-slate-500">
-            Copyright {new Date().getFullYear()} {siteConfig.name}. All rights
+            Copyright {new Date().getFullYear()} {settings.name}. All rights
             reserved.
           </p>
         </div>

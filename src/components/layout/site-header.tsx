@@ -9,9 +9,10 @@ import { MobileNav } from "@/components/layout/mobile-nav";
 
 type SiteHeaderProps = {
   pathname: string;
+  links?: typeof navLinks;
 };
 
-export function SiteHeader({ pathname }: SiteHeaderProps) {
+export function SiteHeader({ pathname, links = navLinks }: SiteHeaderProps) {
   return (
     <header className="fixed top-6 left-1/2 z-50 w-full max-w-6xl -translate-x-1/2 px-4 sm:px-10">
       <nav className="flex h-16 items-center justify-between rounded-full border border-white/10 bg-navy/90 pl-6 pr-3 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-primary/30">
@@ -32,7 +33,7 @@ export function SiteHeader({ pathname }: SiteHeaderProps) {
         {/* Desktop Links */}
         <div className="hidden items-center gap-1 md:flex lg:gap-2">
           <div className="flex items-center gap-1">
-            {navLinks.map((link) => {
+            {links.map((link) => {
               const isActive =
                 pathname === link.href ||
                 (link.href !== "/" && pathname.startsWith(`${link.href}/`));

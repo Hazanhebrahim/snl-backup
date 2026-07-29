@@ -1,63 +1,24 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
-import { createMetadata } from "@/lib/seo";
+import { PostCardGrid } from "@/components/sections/cms/post-card-grid";
+import {
+  fallbackNewsPosts,
+  getCollection,
+  getPageMetadata,
+} from "@/sanity/cms";
 
-export const metadata: Metadata = createMetadata({
-  title: "News | SNL Technology, IFS Partnership & Energy Updates",
-  description:
-    "Read SNL Technology news, external media coverage, partner updates, and announcements about IFS digital operations, energy-sector transformation, and company milestones.",
-  path: "/media/news",
-});
-
-const newsItems = [
-  {
-    title: "Company announcements",
+export async function generateMetadata(): Promise<Metadata> {
+  return getPageMetadata("mediaPage", {
+    title: "News | SNL Technology, IFS Partnership & Energy Updates",
     description:
-      "Leadership updates, new partnerships, certifications, and business milestones.",
-  },
-  {
-    title: "Operational updates",
-    description:
-      "Approved project highlights, delivery notes, and service capability announcements.",
-  },
-  {
-    title: "Partner news",
-    description:
-      "Swagelok and IFS-aligned updates relevant to Nigerian upstream and industrial teams.",
-  },
-];
+      "Read SNL Technology news, external media coverage, partner updates, and announcements about IFS digital operations, energy-sector transformation, and company milestones.",
+    path: "/media/news",
+  });
+}
 
-const externalNews = [
-  {
-    title:
-      "SNL Technology Services CEO, Ladi Soyombo, Shares Insights on SNL and IFS Partnership",
-    source: "THISDAYLIVE",
-    href: "https://www.thisdaylive.com/2023/05/27/snl-technology-services-ceo-ladi-soyombo-shares-insights-on-snl-and-ifs-partnership/",
-  },
-  {
-    title:
-      "Digitizing Nigeria's Oil and Gas Sector: SNL Technology Services and IFS Partner to Transform Upstream Operations Through Digital Technology",
-    source: "Nairametrics",
-    href: "https://nairametrics.com/2023/05/27/digitizing-nigerias-oil-and-gas-sector-snl-technology-services-and-ifs-partner-to-transform-upstream-operations-through-digital-technology/",
-  },
-  {
-    title:
-      "SNL Technology partners with IFS to revolutionise Nigeria's energy landscape",
-    source: "APIE News",
-    href: "https://appsaf.apieproject.com/news/2023/05/29/snl-technology-partners-with-ifs-to-revolutionise-nigerias-energy-landscape-an-exclusive-interview-with-snl-techs-ceo-ladi-soyombo/",
-  },
-  {
-    title:
-      "SNL Technology partners with IFS to revolutionise Nigeria's energy landscape - An exclusive interview with SNL Tech's CEO, Ladi Soyombo",
-    source: "Business Insider Africa",
-    href: "https://africa.businessinsider.com/local/markets/an-exclusive-interview-with-snl-techs-ceo-ladi-soyombo/7cgxxp3",
-  },
-];
+export default async function NewsPage() {
+  const posts = await getCollection("newsPost", fallbackNewsPosts);
 
-export default function NewsPage() {
   return (
     <>
       {/* <PageIntro
@@ -71,26 +32,11 @@ export default function NewsPage() {
         eyebrow="News"
         title="SNL Technology in the news"
         description="External coverage and partner stories about SNL Technology's work in software, digital operations, and energy-sector transformation.">
-        <div className="grid gap-5 md:grid-cols-2">
-          {externalNews.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-eyebrow">
-                {item.source}
-              </p>
-              <h2 className="mt-3 text-lg font-bold leading-7 text-navy group-hover:text-primary">
-                {item.title}
-              </h2>
-              <p className="mt-5 text-sm font-semibold text-eyebrow underline">
-                Read story
-              </p>
-            </Link>
-          ))}
-        </div>
+        <PostCardGrid
+          posts={posts}
+          emptyMessage="No news posts have been published yet."
+          internalBasePath="/media/news"
+        />
       </Section>
 
       {/* <Section

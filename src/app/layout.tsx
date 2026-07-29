@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PageShell } from "@/components/layout/page-shell";
 import { defaultSeo, siteUrl } from "@/lib/seo";
+import { getNavigation, getSiteSettings } from "@/sanity/cms";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -115,11 +116,16 @@ const professionalServiceJsonLd = {
   sameAs: organizationJsonLd.sameAs,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [settings, navigation] = await Promise.all([
+    getSiteSettings(),
+    getNavigation(),
+  ]);
+
   return (
     <html
       lang="en"
@@ -134,7 +140,12 @@ export default function RootLayout({
             ]).replace(/</g, "\\u003c"),
           }}
         />
-        <PageShell>{children}</PageShell>
+        <PageShell
+          settings={settings}
+          headerLinks={navigation.headerLinks}
+          footerNavLinks={navigation.footerLinks}>
+          {children}
+        </PageShell>
       </body>
     </html>
   );

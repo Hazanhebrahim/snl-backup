@@ -4,7 +4,8 @@ import { PageIntro } from "@/components/sections/page-intro";
 import { Section } from "@/components/ui/section";
 import { CtaBand } from "@/components/sections/cta-band";
 import { LeadershipSection } from "@/components/sections/about/leadership-section";
-import { differentiators, leadership, values } from "@/content/site";
+import { differentiators, values } from "@/content/site";
+import { getLeaders } from "@/sanity/cms";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -14,7 +15,9 @@ export const metadata: Metadata = createMetadata({
   path: "/about",
 });
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const leaders = await getLeaders();
+
   return (
     <>
       <PageIntro
@@ -107,7 +110,7 @@ export default function AboutPage() {
         eyebrow="Our people"
         title="Management"
         description="The leadership team combines petroleum engineering, mechanical engineering, supply chain, operational execution, and technology transformation experience.">
-        <LeadershipSection leaders={leadership} />
+        <LeadershipSection leaders={leaders} />
       </Section>
 
       <CtaBand
